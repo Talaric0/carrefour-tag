@@ -8,10 +8,12 @@
   color: $dark-gray;
   h1 {
     font-weight: bold;
+    font-family: $primary-font;
   }
   h4 {
     font-size: 1rem;
     color: $medium-gray;
+    font-family: $secondary-font;
   }
 }
 
