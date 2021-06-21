@@ -5,7 +5,7 @@ class CreateTags < ActiveRecord::Migration[6.0]
       t.string :maker
       t.string :model
       t.string :nickname
-      t.boolean :locked
+      t.boolean :locked, default: true
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
