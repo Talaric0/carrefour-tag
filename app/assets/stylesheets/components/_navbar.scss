@@ -14,9 +14,18 @@
 // Low Navbar
 
 .low-navbar {
-  padding: 8px 16px;
+  padding: 12px 16px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  p {
+    color: $medium-gray;
+    font-size: 0.7rem;
+  }
 }
 
 .nav-icon {
   color: $medium-gray;
+  font-size: 1rem;
 }
