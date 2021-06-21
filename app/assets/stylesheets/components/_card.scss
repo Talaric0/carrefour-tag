@@ -1,0 +1,20 @@
+// Balance Card
+
+.balance {
+  border: 1px solid $medium-gray;
+  padding: 24px;
+  margin: 8px 20px;
+  border-radius: 8px;
+  color: $dark-gray;
+  h1 {
+    font-weight: bold;
+  }
+  h4 {
+    font-size: 1rem;
+    color: $medium-gray;
+  }
+}
+
+.view {
+  font-size: 1.5rem;
+}
