@@ -4,5 +4,5 @@ class Tag < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :plate, :model, :maker, :nickname, presence: true
+  validates :plate, :model, :maker, :year, :nickname, presence: true
 end
