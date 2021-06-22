@@ -86,3 +86,48 @@
     font-weight: 700;
   }
 }
+
+// Due Date Card
+
+.due-date-info {
+  margin: 20px 20px;
+  padding: 0 32px;
+  h3 {
+    font-family: $primary-font;
+    color: $dark-blue;
+    font-size: 1.2rem;
+  }
+  p {
+    font-family: $secondary-font;
+    color: $medium-gray;
+    font-size: 1rem;
+  }
+  span {
+    font-weight: 700;
+  }
+}
+
+// Carrefour Tag Card
+
+.tag-cta {
+  margin: 20px 20px;
+  h3 {
+    font-family: $primary-font;
+    color: $dark-gray;
+    font-size: 1rem;
+  }
+  p {
+    font-family: $secondary-font;
+    color: $medium-gray;
+    font-size: 0.8rem;
+  }
+}
+
+.chevron-right {
+  padding-right: 24px;
+  color: $dark-blue;
+}
+
+// Credit Card Statement
+
+
