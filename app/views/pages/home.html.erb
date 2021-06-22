@@ -1,7 +1,7 @@
 <div class="greeting d-flex justify-content-between align-items-center">
-  <img src="https://kitt.lewagon.com/placeholder/users/danilogcastro" class="avatar">
+  <%= cl_image_tag current_user.photo.key, aspect_ratio: 1, crop: :fill, class: "avatar" %>
   <div class="user-info flex-grow-1">
-    <p class="name">Olá, Danilo</p>
+    <p class="name">Olá, <%= current_user.first_name %></p>
     <p class="credit-card-number">
     <span class="credit-card-block">
       <% 4.times do %>
@@ -52,13 +52,17 @@
   </div>
 </div>
 
-<div class="carrefour-tag d-flex justify-content-between align-items-center">
-  <div class="tag-cta">
-    <h3>Conheça o Carrefour TAG</h3>
-    <p>Pagamento fácil e rápido</p>
-  </div>
-  <i class="fas fa-chevron-right chevron-right"></i>
-</div>
+<% if current_user.tags.length.zero? %>
+  <%= link_to tag_info_path do %>
+    <div class="carrefour-tag d-flex justify-content-between align-items-center">
+      <div class="tag-cta">
+        <h3>Conheça o Carrefour TAG</h3>
+        <p>Pagamento fácil e rápido</p>
+      </div>
+      <i class="fas fa-chevron-right chevron-right"></i>
+    </div>
+  <% end %>
+<% end %>
 
 <div class="credit-card-statement">
   <h3 class="border-bottom">Última Fatura</h3>
