@@ -1,0 +1,183 @@
+// Greeting Card
+
+.user-info {
+  padding: 8px 12px;
+}
+
+.name {
+  font-family: $primary-font;
+  color: $medium-gray;
+  font-size: 0.9rem;
+}
+
+.credit-card-number {
+  font-family: $secondary-font;
+  color: $medium-gray;
+  font-size: 0.7rem;
+}
+
+.credit-card-block {
+  font-size: 0.2rem;
+  margin-right: 4px;
+  vertical-align: middle;
+  i {
+    margin-left: 2px;
+  }
+}
+
+.notifications {
+  padding-right: 8px;
+}
+
+.notification-icon {
+  color: $medium-blue;
+  font-size: 1.4rem;
+}
+
+.notification-count {
+  position: absolute;
+  background-color: $red;
+  color: white;
+  padding: 3px;
+  border-radius: 50%;
+  right: 18px;
+  top: 12px;
+  font-size: 0.6rem;
+}
+
+// Balance Card
+
+.balance {
+  margin: 20px 20px;
+}
+
+.available-limit {
+  font-size: 1rem;
+  h2 {
+    font-family: $primary-font;
+    color: $dark-blue;
+    font-size: 1.7rem;
+  }
+  p {
+    font-family: $secondary-font;
+    color: $medium-gray !important;
+    font-size: 0.7rem;
+
+  }
+  span {
+    font-weight: 700;
+    font-size: 2.3rem;
+  }
+}
+
+.balance-info {
+  p {
+    font-family: $primary-font;
+    color: $medium-blue;
+    font-size: 0.8rem;
+  }
+  .chevron-right {
+    margin-left: 4px;
+  }
+}
+
+.limit-bar {
+  background-color: #0d95aa;
+  padding: 4px 0;
+  margin: 8px 0;
+  border-radius: 20px;
+}
+
+.limit-info {
+  font-family: $secondary-font;
+  color: $medium-gray;
+  text-align: right;
+  font-size: 0.7rem;
+  span {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+// Due Date Card
+
+.due-date-info {
+  margin: 20px 20px;
+  padding: 0 32px;
+  h3 {
+    font-family: $primary-font;
+    color: $dark-blue;
+    font-size: 1.2rem;
+  }
+  p {
+    font-family: $secondary-font;
+    color: $medium-gray;
+    font-size: 1rem;
+  }
+  span {
+    font-weight: 700;
+  }
+}
+
+// Carrefour Tag Card
+
+.tag-cta {
+  margin: 20px 20px;
+  h3 {
+    font-family: $primary-font;
+    color: $dark-gray;
+    font-size: 1rem;
+  }
+  p {
+    font-family: $secondary-font;
+    color: $medium-gray;
+    font-size: 0.8rem;
+  }
+}
+
+.carrefour-tag > .chevron-right {
+  padding-right: 24px;
+  color: $dark-blue;
+}
+
+// Credit Card Statement
+
+.credit-card-statement {
+  margin: 20px 20px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 1px 1px 4px rgb(200, 200, 200);
+  h3 {
+    font-family: $primary-font;
+    color: $dark-blue;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+.statement-details {
+  padding: 24px 16px;
+  i {
+    color: $medium-gray;
+    font-size: 68px;
+  }
+  h4 {
+    color: $dark-gray;
+    font-family: $primary-font;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  p {
+    color: $medium-gray;
+    font-family: $secondary-font;
+    font-size: 0.8rem;
+  }
+}
+
+.empty-message {
+  padding-left: 20px;
+}
+
