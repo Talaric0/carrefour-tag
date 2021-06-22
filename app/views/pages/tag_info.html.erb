@@ -1,1 +1,22 @@
-<p>tag-info </p>
+<h2 style="margin: 1rem;"> Olá, <%= current_user.first_name %> </h2>
+
+
+<div class="tag_info_banner" style="background-image: url(<%= image_path 'estrada.png' %>)">
+  <h1>Carrefour Tag</h1>
+  <p>Solicite seu adesivo e aproveite as vantagens que o Carrefour TAG oferece!</p>
+  <%= link_to "Peça agora!", new_tag_path, class: "btn btn-primary" %>
+  
+</div>
+
+<div class="vantagens_card">
+  <div class="header">
+    <h4>Vantagens</h4>
+  </div>
+  <div class="body">
+    <ul>
+      <li>Sem mensalidade!</li>
+      <li>Integrado ao App</li>
+      <li>Pagamento direto na fatura do cartão Carrefour</li>
+    </ul>
+  </div>
+</div>
