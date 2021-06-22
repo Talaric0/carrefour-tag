@@ -36,3 +36,29 @@ end
 p '------------------------------------------------------------------------------------'
 
 p 'Creating new tags...'
+
+puts "Fetching car makers..."
+makers_url = 'https://fipeapi.appspot.com/api/1/carros/marcas.json'
+serialized = URI.open(makers_url).read
+makers_array = JSON.parse(serialized)
+puts "Done fetching."
+
+
+User.all.each do |user|
+  (1..5).to_a.sample.times do
+    maker = makers_array.sample
+
+    # fetch a random model from the maker
+    model = JSON.parse(URI.open("https://fipeapi.appspot.com/api/1/carros/veiculos/#{maker['id']}.json").read).sample
+
+    new_tag = Tag.create!(
+      user: user,
+      nickname: "Carro do #{user.first_name}",
+      plate: "#{('A'..'Z').to_a.shuffle[0,3].join}-#{Faker::Number.number(digits: 4)}",
+      maker: maker['fipe_name'],
+      model: model['name'],
+      year: rand(2000..Date.today.year),
+    )
+    puts "Created #{new_tag.nickname} with plate #{new_tag.plate}, a #{new_tag.model} from #{new_tag.maker} year #{new_tag.year}"
+  end
+end
