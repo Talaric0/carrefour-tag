@@ -1,10 +1,10 @@
-<div class='bg-white'>
+<div class='bg-white pb-5 pt-4'>
   <h2 class='card-title text-center'>Fatura Fechada</h2>
-  <div>
-    <p>GRAPH</p>
+  <div class='w-100 b-0 m-0'>
+    <img src="/assets/sample-graphic.png" class='w-100'>
   </div>
 
-  <div class='card-padding text-center'>
+  <div class='card-padding text-center mt-5'>
     <div class="d-flex justify-content-around align-items-center card-summary">
       <div class='w-50'>
         <p class='mb-0 card-summary-text'>Valor Total</p>
@@ -21,7 +21,7 @@
     <ul class='leaders'>
       <li>
         <span class='card-transaction-text'>Pagamento mínimo</span>
-        <span class='card-transaction-values'>R$ <span class='card-transaction-value'>115</span>,28</span>
+        <span class='card-transaction-values'>R$115,28</span>
       </li>
     </ul>
   </div>
@@ -33,154 +33,154 @@
 
 
   <div class='card-padding my-5'>
+    <h2 class='card-title'>Resumo da Fatura</h2>
+    <hr>
     <ul class='leaders'>
       <li>
         <span class='card-transaction-text'>Total fatura anterior</span>
-        <span class='card-transaction-values'>R$ <span class='card-transaction-value'>473</span>,28</span>
+        <span class='card-transaction-values'>R$473,28</span>
       </li>
       <li>
         <span class='card-transaction-text'>Pagamento efetuado</span>
-        <span class='card-transaction-values'>-R$ <span class='card-transaction-value'>473</span>,28</span>
+        <span class='card-transaction-values'>-R$473,28</span>
       </li>
       <li>
         <span class='card-transaction-text'>Lançamento deste mês</span>
-        <span class='card-transaction-values'>R$ <span class='card-transaction-value'>730</span>,50</span>
+        <span class='card-transaction-values'>R$730,50</span>
       </li>
       <li>
         <span class='card-transaction-text'>Total carrefour TAG</span>
-        <span class='card-transaction-values'>-R$ <span class='card-transaction-value'>98</span>,52</span>
+        <span class='card-transaction-values'>-R$98,52</span>
       </li>
       <li>
         <span class='card-transaction-text'>Descontos</span>
-        <span class='card-transaction-values'>-R$ <span class='card-transaction-value'>60</span>,50</span>
+        <span class='card-transaction-values'>-R$60,50</span>
       </li>
       <li>
         <span class='card-transaction-text'>TOTAL</span>
-        <span class='card-transaction-values'>R$ <span class='card-transaction-value'>768</span>,52</span>
+        <span class='card-transaction-values'>R$768,52</span>
       </li>
     </ul>
   </div>
 
     
   <div class='d-flex align-items-center justify-content-around card-padding my-5'>
-    <%= link_to 'PDF', '#', class: 'carrefour-btn-outline-primary mx-2 w-50' %>
-    <%= link_to 'E-MAIL', '#', class: 'carrefour-btn-outline-primary w-50 mx-2' %>
+    <%= link_to '#', class: 'carrefour-btn-outline-primary mx-2 w-50' do %>
+      <i class="fas fa-file-download"><span> PDF</span></i>
+    <% end %>
+    <%= link_to '#', class: 'carrefour-btn-outline-primary w-50 mx-2' do %>
+      <i class="fas fa-paper-plane"><span> E-MAIL</span></i>
+    <% end %>
   </div>
 
 
-  <div class='p-3'>
+  <div class='card-padding'>
     <h2 class='card-title'>Lançamentos da Fatura</h2>
     <hr>
 
-    <p class='data-fatura'>DOM, 16/05</p>
+    <p class='card-order-date'>DOM, 16/05</p>
     
-    <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
       <div class='d-flex align-items-center justify-content-start'>
-        <h5>X</h5>
+        <img src="/assets/order_icons/four-icon.png">
         <div>
-          <p class='mb-0'>Bonus Premio Seguros</p>
-          <p>Outros</p>
+          <p class='text'>Bonus Premio Seguros</p>
+          <p class='category'>Outros</p>
         </div>
       </div>
-      <p>--</p>
-      <p>-R$5,07</p>
+      <p class='value'>R$5,07</p>
     </div>
 
-    <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
       <div class='d-flex align-items-center justify-content-start'>
-        <h5>X</h5>
+        <img src="/assets/order_icons/four-icon.png">
         <div>
-          <p class='mb-0'>Seguro Conta Paga funcionário</p>
-          <p>Outros</p>
+          <p class='text'>Seguro Conta Paga funcionário</p>
+          <p class='category'>Outros</p>
         </div>
       </div>
-      <p>--</p>
-      <p>-R$5,07</p>
+      <p class='value'>-R$5,07</p>
     </div>
 
-    <p class='data-fatura'>QUI, 13/05</p>
+    <p class='card-order-date'>QUI, 13/05</p>
     
-    <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
       <div class='d-flex align-items-center justify-content-start'>
-        <h5>X</h5>
+        <img src="/assets/order_icons/four-icon.png">
         <div>
-          <p class='mb-0'>EBANX*SPOTIFY, CURITIBA</p>
-          <p>Eletrônicos</p>
+          <p class='text'>EBANX*SPOTIFY, CURITIBA</p>
+          <p class='category'>Eletrônicos</p>
         </div>
       </div>
-      <p>--</p>
-      <p>-R$16,90</p>
+      <p class='value'>-R$16,90</p>
     </div>
 
-    <p class='data-fatura'>SEG, 10/05</p>
+    <p class='card-order-date'>SEG, 10/05</p>
     
-    <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
       <div class='d-flex align-items-center justify-content-start'>
-        <h5>X</h5>
+        <img src="/assets/order_icons/four-icon.png">
         <div>
-          <p class='mb-0'>Pagamento por débito direto</p>
-          <p>Outros</p>
+          <p class='text'>Pagamento por débito direto</p>
+          <p class='category'>Outros</p>
         </div>
       </div>
-      <p>--</p>
-      <p>-R$473,21</p>
+      <p class='value'>-R$473,21</p>
     </div>
 
-    <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
       <div class='d-flex align-items-center justify-content-start'>
-        <h5>X</h5>
+        <img src="/assets/order_icons/four-icon.png">
         <div>
-          <p class='mb-0'>RAPPI*Patties Santo Andre</p>
-          <p>Serviços</p>
+          <p class='text'>RAPPI*Patties Santo Andre</p>
+          <p class='category'>Serviços</p>
         </div>
       </div>
-      <p>--</p>
-      <p>R$36,80</p>
+      <p class='value'>R$36,80</p>
     </div>
+  </div>
 
+  <div class="card-padding">
     <h2 class='mt-5 card-title'>Lançamentos da TAG</h2>
     <hr>
 
-    <p>Carro da Jú</p>
+    <p class='card-tag-nickname'>Carro da Jú</p>
 
-    <p class='data-fatura'>SEG, 17/05</p>
+    <p class='card-order-date'>SEG, 17/05</p>
     
-    <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
       <div class='d-flex align-items-center justify-content-start'>
-        <h5>X</h5>
+        <img src="/assets/order_icons/four-icon.png">
         <div>
-          <p class='mb-0'>Pedágio Bandeirantes</p>
-          <p>Pedágio</p>
+          <p class='text'>Pedágio Bandeirantes</p>
+          <p class='category'>Pedágio</p>
         </div>
       </div>
-      <p>--</p>
-      <p>-R$8,93</p>
+      <p class='value'>-R$8,93</p>
     </div>
 
-    <p class='data-fatura'>TER, 18/05</p>
+    <p class='card-order-date'>TER, 18/05</p>
     
-    <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
       <div class='d-flex align-items-center justify-content-start'>
-        <h5>X</h5>
+        <img src="/assets/order_icons/four-icon.png">
         <div>
-          <p class='mb-0'>Drive Carrefour Pinheiros</p>
-          <p>Mercado</p>
+          <p class='text'>Drive Carrefour Pinheiros</p>
+          <p class='category'>Mercado</p>
         </div>
       </div>
-      <p>--</p>
-      <p>-R$8,93</p>
+      <p class='value'>-R$8,93</p>
     </div>
 
-    <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
       <div class='d-flex align-items-center justify-content-start'>
-        <h5>X</h5>
+        <img src="/assets/order_icons/four-icon.png">
         <div>
-          <p class='mb-0'>Posto Shell Center</p>
-          <p>Posto</p>
+          <p class='text'>Posto Shell Center</p>
+          <p class='category'>Posto</p>
         </div>
       </div>
-      <p>--</p>
-      <p>-R$69,52</p>
+      <p class='value'>-R$69,52</p>
     </div>
   </div>
 
@@ -190,11 +190,11 @@
     <ul class='leaders'>
       <li>
         <span class='card-transaction-text'>Nesta fatura</span>
-        <span class='card-transaction-values'>R$ <span class='card-transaction-value'>124</span>,03</span>
+        <span class='card-transaction-values'>R$124,03</span>
       </li>
       <li>
         <span class='card-transaction-text'>Últimos 12 meses</span>
-        <span class='card-transaction-values'>R$ <span class='card-transaction-value'>276</span>,60</span>
+        <span class='card-transaction-values'>R$276,60</span>
       </li>
     </ul>
   </div>
@@ -202,7 +202,7 @@
   <div class="card-padding mt-5 pb-4">
     <h2 class='card-title'>Tipo de Envio de Fatura</h2>
     <hr>
-    <div class='d-flex justify-content-between align-items-center my-4'>
+    <div class='d-flex justify-content-between align-items-top my-4'>
       <div>
         <p class='mb-0'>Tipo de envio atual</p>
         <p class='my-0'><strong>E-Mail</strong></p>

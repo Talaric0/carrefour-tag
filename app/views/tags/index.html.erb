@@ -1,7 +1,7 @@
 
 <h2 style="margin: 1rem;"> Olá, <%= current_user.first_name %> </h2>
 
-<h4>Veículos Cadastrados</h4>
+<h4 style="margin: 1rem;">Veículos Cadastrados</h4>
 
 <% @tags.each do |tag| %>
   <div class="tag_card">
@@ -12,10 +12,10 @@
         <div class="info"><strong>Modelo:</strong><span><%= tag.model %></span></div>
         <div class="info"><strong>Placa:</strong><span><%= tag.plate %></span></div>
       </div>
-      <%= link_to "Cancelar", tag, method: :delete %>
+      <%= button_to "Cancelar", tag_path(tag), method: :delete %>
     </div>
   </div>
 <% end %>
 
 
-<%= link_to 'Novo Veículo', new_tag_path, class: "btn btn-primary" %>
+<%= link_to 'Novo Veículo', new_tag_path, class: "btn btn-primary new-vehicle" %>
