@@ -17,38 +17,48 @@
   font-size: xx-large;
 }
 
-ul.card-transaction {
+
+ul.leaders {
   max-width: 40em;
   padding: 0;
   overflow-x: hidden;
   list-style: none
 }
 
-ul.card-transaction li:before {
+ul.leaders li:before {
   float: left;
   width: 0;
   white-space: nowrap;
+  content: "......................................................................................................................................................................................................................................................";
   color: #C6CFD5;
-  content: "......................................................................................................................................................................................................................................................"
 }
 
-.card-transaction-text {
+ul.leaders span:first-child {
   padding-right: 0.33em;
-  background: white;
-  font-size: small;
-}
-.card-transaction-values {
+  background: white}
+
+  ul.leaders span + span {
   float: right;
   padding-left: 0.33em;
-  background: white;
+  background: white
+}
+
+ul.leaders li {
+  margin: 10px 0
+}
+
+.card-transaction-values {
   font-weight: bold;
 }
 
-.card-transaction-value {
-  font-size: larger;
+
+.card-transaction-text {
+  font-size: small;
 }
 
-.card-transaction-dots {
-  font-style: small;
-  color: #C6CFD5;
+
+.card-title {
+  color: #064B9C;
+  font-weight: bold;
+  font-size: x-large;
 }
