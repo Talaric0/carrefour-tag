@@ -1,3 +1,15 @@
+h2 {
+  font-family: $primary-font;
+}
+
+p {
+  font-family: $secondary-font;
+}
+
+span {
+  font-family: $secondary-font;
+}
+
 .card-padding {
   padding: 0 15px;
 }
@@ -17,9 +29,8 @@
   font-size: xx-large;
 }
 
-
 ul.leaders {
-  max-width: 40em;
+ 
   padding: 0;
   overflow-x: hidden;
   list-style: none
@@ -29,7 +40,7 @@ ul.leaders li:before {
   float: left;
   width: 0;
   white-space: nowrap;
-  content: "......................................................................................................................................................................................................................................................";
+  content: "............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................";
   color: #C6CFD5;
 }
 
@@ -51,14 +62,47 @@ ul.leaders li {
   font-weight: bold;
 }
 
-
 .card-transaction-text {
   font-size: small;
 }
 
-
 .card-title {
-  color: #064B9C;
+  color: $dark-blue;
   font-weight: bold;
   font-size: x-large;
+}
+
+.card-detailed-transaction {
+  margin: 12px 0;
+}
+
+.card-detailed-transaction p {
+  margin: 0;
+}
+
+.card-detailed-transaction img {
+  margin-right: 12px;
+}
+
+.card-detailed-transaction .text {
+  
+}
+
+.card-detailed-transaction .category {
+  font-size: small;
+  color: $medium-gray; 
+}
+
+.card-order-date {
+  color: $medium-gray;
+}
+
+.card-detailed-transaction .value {
+  font-weight: bold;
+}
+
+.card-tag-nickname {
+  font-size: larger;
+  margin: 15px 0;
+  font-weight: bold;
 }
