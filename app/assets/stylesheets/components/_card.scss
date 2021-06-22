@@ -76,6 +76,9 @@
     color: $medium-blue;
     font-size: 0.8rem;
   }
+  .chevron-right {
+    margin-left: 4px;
+  }
 }
 
 .limit-bar {
@@ -132,7 +135,7 @@
   }
 }
 
-.chevron-right {
+.carrefour-tag > .chevron-right {
   padding-right: 24px;
   color: $dark-blue;
 }
