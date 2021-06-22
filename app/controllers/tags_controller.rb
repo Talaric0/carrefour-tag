@@ -56,6 +56,10 @@ class TagsController < ApplicationController
     end
   end
 
+  def tag_success
+    @tags = current_user.tags
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tag
