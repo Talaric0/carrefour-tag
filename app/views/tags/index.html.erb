@@ -1,25 +1,21 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Tags</h1>
+<h2 style="margin: 1rem;"> Olá, <%= current_user.first_name %> </h2>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h4>Veículos Cadastrados</h4>
 
-  <tbody>
-    <% @tags.each do |tag| %>
-      <tr>
-        <td><%= link_to 'Show', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @tags.each do |tag| %>
+  <div class="tag_card">
+    <p><%= tag.nickname %></p>
+    <div class="tag_card_wrapper">
+      <div class="car_info">
+        <div class="info"><strong>Marca:</strong><span><%= tag.maker %></span></div>
+        <div class="info"><strong>Modelo:</strong><span><%= tag.model %></span></div>
+        <div class="info"><strong>Placa:</strong><span><%= tag.plate %></span></div>
+      </div>
+      <%= link_to "Cancelar", tag, method: :delete %>
+    </div>
+  </div>
+<% end %>
 
-<br>
 
-<%= link_to 'New Tag', new_tag_path %>
+<%= link_to 'Novo Veículo', new_tag_path, class: "btn btn-primary" %>
