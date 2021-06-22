@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/cartao', to: 'pages#cartao' 
 
   #TAG related routes
-  get '/tag', to: 'pages#tag'
+  get '/tag', to: 'pages#tag', as: 'tags_page_path'
   get '/tag_info', to: 'pages#tag_info'
   resources :tags, only: [ :index, :show, :new, :create, :edit, :update, :destroy]
 
