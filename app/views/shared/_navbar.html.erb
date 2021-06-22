@@ -1,24 +1,24 @@
 <div class="low-navbar d-flex justify-content-around border-top">
   <%= link_to root_path do %>
     <div class="home text-center">
-      <i class="fas fa-home nav-icon"></i>
+      <%= image_tag "menu_icons/home.svg" %>
       <p>Início</p>
     </div>
   <% end %>
   <%= link_to cartao_path do %>
     <div class="credit-card text-center">
-      <i class="far fa-credit-card nav-icon"></i>
+      <%= image_tag "menu_icons/credit_card.svg" %>
       <p>Cartão</p>
     </div>
   <% end %>
   <%= link_to tags_path do %>
     <div class="tag text-center">
-      <i class="fas fa-car nav-icon"></i>
+      <%= image_tag "menu_icons/tag.svg" %>
       <p>Tag</p>
     </div>
   <% end %>
   <div class="profile text-center">
-    <i class="fas fa-user nav-icon"></i>
+    <%= image_tag "menu_icons/profile.svg" %>
     <p>Perfil</p>
   </div>
 
