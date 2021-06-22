@@ -21,3 +21,15 @@
   color: #0970E6;
   font-weight: bold;
 }
+
+// Form Button
+
+.submit-button {
+  background-color: white;
+  color: $button-color;
+  border: 1px solid $button-color;
+  font-family: $primary-font;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+}
