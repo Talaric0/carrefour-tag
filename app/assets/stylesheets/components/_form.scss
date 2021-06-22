@@ -1,0 +1,30 @@
+// New Tag Form
+
+.form-container {
+  margin: auto 2.5rem;
+}
+
+.form-group {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.form-control {
+  border: none;
+}
+
+.form-control:focus {
+  border-color: white;
+  box-shadow: none;
+}
+
+.form-group:focus {
+  border: 1px solid red;
+}
+
+.new-tag-label {
+  color: $medium-gray;
+  font-family: $secondary-font;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0;
+}
