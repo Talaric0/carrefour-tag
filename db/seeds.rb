@@ -62,3 +62,5 @@ User.all.each do |user|
     puts "Created #{new_tag.nickname} with plate #{new_tag.plate}, a #{new_tag.model} from #{new_tag.maker} year #{new_tag.year}"
   end
 end
+
+puts "DONE!"
