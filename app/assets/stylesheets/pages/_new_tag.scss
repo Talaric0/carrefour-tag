@@ -1,0 +1,15 @@
+.new-tag-message {
+  margin: 1.5rem 2.5rem;
+  text-align: center;
+  h1 {
+    font-family: $primary-font;
+    color: $dark-gray;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-family: $secondary-font;
+    color: $dark-gray;
+    font-size: 1.6rem;
+  }
+}

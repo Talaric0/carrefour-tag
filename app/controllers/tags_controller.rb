@@ -22,6 +22,7 @@ class TagsController < ApplicationController
   # POST /tags or /tags.json
   def create
     @tag = Tag.new(tag_params)
+    @tag.user = current_user
 
     respond_to do |format|
       if @tag.save
@@ -68,6 +69,6 @@ class TagsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tag_params
-      params.require(:tag).permit(:nickname, :plate, :maker, :model, :locked, :user_id, :photo)
+      params.require(:tag).permit(:nickname, :plate, :maker, :model, :year, :locked, :user_id, :photo)
     end
 end

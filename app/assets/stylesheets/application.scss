@@ -12,8 +12,10 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/tag_info";
+@import "pages/new_tag";
 @import "pages/tags_index";
 @import "pages/tag_success";
+
 @import "pages/cartao";
 @import "components/button";
 
@@ -21,4 +23,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+p {
+  margin: 0;
 }
