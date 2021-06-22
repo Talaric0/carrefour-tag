@@ -1,2 +1,72 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="greeting d-flex justify-content-between align-items-center">
+  <img src="https://kitt.lewagon.com/placeholder/users/danilogcastro" class="avatar">
+  <div class="user-info flex-grow-1">
+    <p class="name">Olá, Danilo</p>
+    <p class="credit-card-number">
+    <span class="credit-card-block">
+      <% 4.times do %>
+        <i class="fas fa-circle"></i>
+      <% end %>
+    </span>
+    <span class="credit-card-block">
+      <% 4.times do %>
+        <i class="fas fa-circle"></i>
+      <% end %>
+    </span>
+    <span class="credit-card-block">
+      <% 4.times do %>
+        <i class="fas fa-circle"></i>
+      <% end %>
+    </span>
+    3457
+    </p>
+  </div>
+  <div class="notifications">
+    <i class="far fa-bell notification-icon"></i>
+    <div class="notification-count">98</div>
+  </div>
+</div>
+
+<div class="balance">
+  <div class="balance-info d-flex justify-content-between align-items-end">
+    <div class="available-limit">
+      <p>DISPONÍVEL</p>
+      <h2>R$ <span>850,</span>59</h2>
+    </div>
+    <p>AUMENTAR LIMITE <span><i class="fas fa-chevron-right chevron-right"></i></span></p>
+  </div>
+  <div class="limit">
+    <div class="limit-bar"></div>
+    <p class="limit-info">Limite Total R$ <span>4.000,</span>00</p>
+  </div>
+</div>
+
+<div class="due-date-info d-flex justify-content-between">
+  <div class="best-date d-flex align-items-center">
+    <p>Melhor dia de compra</p>
+    <h3>26 <span>JUN</span></h3>
+  </div>
+  <div class="due-date d-flex align-items-center">
+    <p>Dia do vencimento</p>
+    <h3>05 <span>JUL</span></h3>
+  </div>
+</div>
+
+<div class="carrefour-tag d-flex justify-content-between align-items-center">
+  <div class="tag-cta">
+    <h3>Conheça o Carrefour TAG</h3>
+    <p>Pagamento fácil e rápido</p>
+  </div>
+  <i class="fas fa-chevron-right chevron-right"></i>
+</div>
+
+<div class="credit-card-statement">
+  <h3 class="border-bottom">Última Fatura</h3>
+  <div class="statement-details d-flex align-items-center">
+    <i class="fas fa-shopping-bag"></i>
+    <div class="empty-message">
+      <h4>Sua fatura está vazia :(</h4>
+      <p>Quando houver lançamentos, sua fatura aparecerá aqui</p>
+    </div>
+  </div>
+</div>

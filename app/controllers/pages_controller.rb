@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   end
 
   def cartao
-    
   end
 
   def tag_info
