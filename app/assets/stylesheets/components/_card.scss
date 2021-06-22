@@ -1,9 +1,41 @@
-// Balance Card
+// Greeting Card
 
-.balance {
+.greeting {
 
 }
 
-.view {
+.user-info {
+  padding: 8px 12px;
+}
 
+.name {
+  font-family: $primary-font;
+  color: $medium-gray;
+  font-size: 0.9rem;
+}
+
+.credit-card {
+  font-family: $secondary-font;
+  color: $medium-gray;
+  font-size: 0.7rem;
+}
+
+.notifications {
+  padding-right: 8px;
+}
+
+.notification-icon {
+  color: $medium-blue;
+  font-size: 1.4rem;
+}
+
+.notification-count {
+  position: absolute;
+  background-color: $red;
+  color: white;
+  padding: 3px;
+  border-radius: 50%;
+  right: 18px;
+  top: 12px;
+  font-size: 0.6rem;
 }
