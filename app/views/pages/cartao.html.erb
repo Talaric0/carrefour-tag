@@ -1,0 +1,178 @@
+  <h2>Fatura Fechada</h2>
+<div>
+  <p>GRAPH</p>
+</div>
+
+<div class='p-3 text-center'>
+  <div class="d-flex justify-content-around align-items-center">
+    <div class='w-50'>
+      <p class='mb-0'>Valor Total</p>
+      <span>R$</span><span>768,</span><span>52</span>
+    </div>
+    <div class='w-50'>
+      <p class='mb-0'>Vencimento</p>
+      <span>08</span> <span>de junho</span>
+    </div>
+  </div>
+
+  <div class='d-flex justify-content-between align-items-center mt-4'>
+    <span>Pagamento mínimo</span>
+    <span>------------</span>
+      <div>
+        <span>R$</span><span>115,</span><span>28</span>
+      </div>
+  </div>
+
+  <p><%= link_to 'CÓDIGO DE BARRAS DA FATURA', '#', class: 'btn btn-primary btn-block mt-5' %></p>
+  <p><%= link_to 'PARCELE', '#', class: 'btn btn-outline-primary btn-block my-2' %></p>
+
+  <div class='d-flex justify-content-between align-items-center mt-5'>
+    <span>Total fatura anterior</span>
+    <span>------------</span>
+    <span>R$473,28</span>
+  </div>
+  <div class='d-flex justify-content-between align-items-center'>
+    <span>Pagamento efetuado</span>
+    <span>-----------</span>
+    <span>-R$473,28</span>
+  </div>
+  <div class='d-flex justify-content-between align-items-center'>
+    <span>Lançamento deste mês</span>
+    <span>------------</span>
+    <span>R$730,50</span>
+  </div>
+  <div class='d-flex justify-content-between align-items-center'>
+    <span>Total carrefour TAG</span>
+    <span>-----------</span>
+    <span>R$98,52</span>
+  </div>
+  <div class='d-flex justify-content-between align-items-center'>
+    <span>Descontos</span>
+    <span>-----------</span>
+    <span>-R$60,50</span>
+  </div>
+  <div class='d-flex justify-content-between align-items-center'>
+    <span>TOTAL</span>
+    <span>-----------</span>
+    <span>R$768,52</span>
+  </div>
+  
+  <div class='d-flex align-items-center justify-content-around my-5'>
+    <%= link_to 'PDF', '#', class: 'btn btn-outline-primary mx-2 w-50' %>
+    <%= link_to 'E-MAIL', '#', class: 'btn btn-outline-primary w-50 mx-2' %>
+  </div>
+</div>
+
+<div class='p-3'>
+  <h2>Lançamentos da Fatura</h2>
+
+  <p class='data-fatura'>DOM, 16/05</p>
+  
+  <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-start'>
+      <h5>X</h5>
+      <div>
+        <p class='mb-0'>Bonus Premio Seguros</p>
+        <p>Outros</p>
+      </div>
+    </div>
+    <p>--</p>
+    <p>-R$5,07</p>
+  </div>
+
+  <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-start'>
+      <h5>X</h5>
+      <div>
+        <p class='mb-0'>Seguro Conta Paga funcionário</p>
+        <p>Outros</p>
+      </div>
+    </div>
+    <p>--</p>
+    <p>-R$5,07</p>
+  </div>
+
+  <p class='data-fatura'>QUI, 13/05</p>
+  
+  <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-start'>
+      <h5>X</h5>
+      <div>
+        <p class='mb-0'>EBANX*SPOTIFY, CURITIBA</p>
+        <p>Eletrônicos</p>
+      </div>
+    </div>
+    <p>--</p>
+    <p>-R$16,90</p>
+  </div>
+
+  <p class='data-fatura'>SEG, 10/05</p>
+  
+  <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-start'>
+      <h5>X</h5>
+      <div>
+        <p class='mb-0'>Pagamento por débito direto</p>
+        <p>Outros</p>
+      </div>
+    </div>
+    <p>--</p>
+    <p>-R$473,21</p>
+  </div>
+
+  <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-start'>
+      <h5>X</h5>
+      <div>
+        <p class='mb-0'>RAPPI*Patties Santo Andre</p>
+        <p>Serviços</p>
+      </div>
+    </div>
+    <p>--</p>
+    <p>R$36,80</p>
+  </div>
+
+  <h2 class='mt-5'>Lançamentos da TAG</h2>
+
+  <p class='data-fatura'>SEG, 17/05</p>
+  
+  <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-start'>
+      <h5>X</h5>
+      <div>
+        <p class='mb-0'>Pedágio Bandeirantes</p>
+        <p>Pedágio</p>
+      </div>
+    </div>
+    <p>--</p>
+    <p>-R$8,93</p>
+  </div>
+
+  <p class='data-fatura'>TER, 18/05</p>
+  
+  <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-start'>
+      <h5>X</h5>
+      <div>
+        <p class='mb-0'>Drive Carrefour Pinheiros</p>
+        <p>Mercado</p>
+      </div>
+    </div>
+    <p>--</p>
+    <p>-R$8,93</p>
+  </div>
+
+  <div class='d-flex align-items-center justify-content-between'>
+    <div class='d-flex align-items-center justify-content-start'>
+      <h5>X</h5>
+      <div>
+        <p class='mb-0'>Posto Shell Center</p>
+        <p>Posto</p>
+      </div>
+    </div>
+    <p>--</p>
+    <p>-R$69,52</p>
+  </div>
+
+</div>
+  
