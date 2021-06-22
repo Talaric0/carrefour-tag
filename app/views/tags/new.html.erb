@@ -14,6 +14,15 @@
     <%= f.input :model, label: "Modelo", label_html: { class: "new-tag-label" } %>
     <%= f.input :plate, label: "Placa", label_html: { class: "new-tag-label" } %>
     <%= f.input :nickname, label: "Apelido do veículo", label_html: { class: "new-tag-label" } %>
+    <label>
+      <span class="d-flex add-picture align-items-center">
+        <i class="fas fa-file-image mx-2"></i>
+        <p>Adicione uma foto do documento do seu veículo</p>
+      </span>
+      <span class="d-none">
+        <%= f.input :photo, input_html: { type: "file", accept: "image/*", capture: "environment" } %>
+      </span>
+    </label>
     <%= f.submit "Prosseguir", class: "submit-button" %>
   <% end %>
 </div>
