@@ -7,4 +7,9 @@ class PagesController < ApplicationController
   def cartao
     
   end
+
+  def tag
+    @tags = Tag.where(user: current_user)
+  end
+  
 end
