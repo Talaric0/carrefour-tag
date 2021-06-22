@@ -1,0 +1,9 @@
+<div class='tag-success'>
+  <% if @tags.length < 2 %>
+    <h2>PARABÉNS!</h2>
+  <% else %>
+    <h2>NOVO VEÍCULO CADASTRADO</h2>
+  <% end %>
+  <p>Estamos verificando tudo, mas, não se preocupe, sua TAG será enviada para o seu endereço.</p>
+  <%= link_to 'Finalizar', tags_path, class: 'carrefour-btn-outline-primary' %>
+</div>
