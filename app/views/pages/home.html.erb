@@ -52,13 +52,15 @@
   </div>
 </div>
 
-<div class="carrefour-tag d-flex justify-content-between align-items-center">
-  <div class="tag-cta">
-    <h3>Conheça o Carrefour TAG</h3>
-    <p>Pagamento fácil e rápido</p>
+<%= link_to tag_info_path do %>
+  <div class="carrefour-tag d-flex justify-content-between align-items-center">
+    <div class="tag-cta">
+      <h3>Conheça o Carrefour TAG</h3>
+      <p>Pagamento fácil e rápido</p>
+    </div>
+    <i class="fas fa-chevron-right chevron-right"></i>
   </div>
-  <i class="fas fa-chevron-right chevron-right"></i>
-</div>
+<% end %>
 
 <div class="credit-card-statement">
   <h3 class="border-bottom">Última Fatura</h3>
