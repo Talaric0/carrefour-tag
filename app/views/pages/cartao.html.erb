@@ -3,28 +3,32 @@
   <p>GRAPH</p>
 </div>
 
-<div class='p-3 text-center'>
-  <div class="d-flex justify-content-around align-items-center">
+<div class='card-padding text-center'>
+  <div class="d-flex justify-content-around align-items-center card-summary">
     <div class='w-50'>
-      <p class='mb-0'>Valor Total</p>
-      <span>R$</span><span>768,</span><span>52</span>
+      <p class='mb-0 card-summary-text'>Valor Total</p>
+      <span>R$</span> <span class='card-summary-value'>768,</span><span>52</span>
     </div>
     <div class='w-50'>
-      <p class='mb-0'>Vencimento</p>
-      <span>08</span> <span>de junho</span>
+      <p class='mb-0 card-summary-text'>Vencimento</p>
+      <span class='card-summary-value'>08</span> <span>de junho</span>
     </div>
   </div>
+</div>
 
-  <div class='d-flex justify-content-between align-items-center mt-4'>
-    <span>Pagamento mínimo</span>
-    <span>------------</span>
-      <div>
-        <span>R$</span><span>115,</span><span>28</span>
-      </div>
-  </div>
+<div class='card-padding my-4'>
+  <ul class='card-transaction'>
+    <li>
+    <span class='card-transaction-text'>Pagamento mínimo</span>
+    <span class='card-transaction-values'>R$ <span class='card-transaction-value'>115,</span>28</span>
+    </li>
+  </ul>
+</div>
 
-  <p><%= link_to 'CÓDIGO DE BARRAS DA FATURA', '#', class: 'btn btn-primary btn-block mt-5' %></p>
-  <p><%= link_to 'PARCELE', '#', class: 'btn btn-outline-primary btn-block my-2' %></p>
+<div class="card-padding">
+  <p><%= link_to 'CÓDIGO DE BARRAS DA FATURA', '#', class: 'carrefour-btn-primary btn-block mt-5' %></p>
+  <p><%= link_to 'PARCELE', '#', class: 'carrefour-btn-outline-primary btn-block my-2' %></p>
+</div>
 
   <div class='d-flex justify-content-between align-items-center mt-5'>
     <span>Total fatura anterior</span>
@@ -134,6 +138,8 @@
 
   <h2 class='mt-5'>Lançamentos da TAG</h2>
 
+  <p>Carro da Jú</p>
+
   <p class='data-fatura'>SEG, 17/05</p>
   
   <div class='d-flex align-items-center justify-content-between'>
@@ -174,5 +180,29 @@
     <p>-R$69,52</p>
   </div>
 
+  <h2 class='mt-5'>Meus Descontos</h2>
+  <div class='d-flex justify-content-between align-items-center mt-4'>
+    <span>Nesta fatura</span>
+    <span>------------</span>
+      <div>
+        <span>R$</span><span>124,</span><span>03</span>
+      </div>
+  </div>
+  <div class='d-flex justify-content-between align-items-center mt-4'>
+    <span>Nos últimos 12 meses</span>
+    <span>------------</span>
+      <div>
+        <span>R$</span><span>276,</span><span>60</span>
+      </div>
+  </div>
+
+  <h2 class='mt-5'>Tipo de Envio de Fatura</h2>
+  <div class='d-flex justify-content-between align-items-center my-4'>
+    <div>
+      <p class='mb-0'>Tipo de envio atual</p>
+      <p class='mb-0'><strong>E-Mail</strong></p>
+    </div>
+      <%= link_to 'ALTERAR ENVIO', '#', class: 'btn btn-outline-primary' %>
+  </div>
 </div>
   

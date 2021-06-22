@@ -1,0 +1,54 @@
+.card-padding {
+  padding: 0 15px;
+}
+
+.card-summary {
+  font-weight: bold;
+  color: #5A626B;
+  margin: 0;
+  padding: 0; 
+}
+
+.card-summary-text {
+  font-size: small;
+}
+
+.card-summary-value {
+  font-size: xx-large;
+}
+
+ul.card-transaction {
+  max-width: 40em;
+  padding: 0;
+  overflow-x: hidden;
+  list-style: none
+}
+
+ul.card-transaction li:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  color: #C6CFD5;
+  content: "......................................................................................................................................................................................................................................................"
+}
+
+.card-transaction-text {
+  padding-right: 0.33em;
+  background: white;
+  font-size: small;
+}
+.card-transaction-values {
+  float: right;
+  padding-left: 0.33em;
+  background: white;
+  font-weight: bold;
+}
+
+.card-transaction-value {
+  font-size: larger;
+}
+
+.card-transaction-dots {
+  font-style: small;
+  color: #C6CFD5;
+}
