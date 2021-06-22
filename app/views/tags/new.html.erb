@@ -1,5 +1,15 @@
-<h1>New Tag</h1>
+<% if current_user.tags.length.zero? %>
+  <h1>Vamos começar!</h1>
+<% else %>
+  <h1>Novo Veículo</h1>
+<% end %>
 
-<%= render 'form', tag: @tag %>
+<h2>Em qual veículo a TAG será instalada?</h2>
 
-<%= link_to 'Back', tags_path %>
+<%= simple_form_for(@tag) do |f| %>
+  <%= f.input :maker, label: "Marca" %>
+  <%= f.input :model, label: "Modelo" %>
+  <%= f.input :plate, label: "Placa" %>
+  <%= f.input :nickname, label: "Apelido do veículo" %>
+  <%= f.submit %>
+<% end %>
