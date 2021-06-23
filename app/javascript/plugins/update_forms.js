@@ -15,4 +15,5 @@ export const updateTagModel = (id, tagModel) => {
       });
     });
   initSelect2();
+  document.querySelector("span.selection > span").style = "border: none;";
 };
