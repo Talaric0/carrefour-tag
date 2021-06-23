@@ -173,7 +173,7 @@
         <% orders.each do |order| %>
           <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
             <div class='d-flex align-items-center justify-content-start'>
-              <img src="/assets/order_icons/four-icon.png">
+              <%= image_tag "order_icons/four-icon.png" %>
               <div>
                 <p class='text'><%= order.location.name %></p>
                 <p class='category'><%= order.location.category %></p>
