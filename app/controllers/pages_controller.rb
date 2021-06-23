@@ -23,6 +23,9 @@ class PagesController < ApplicationController
     @minimum_payment = @card_total * 0.15
   end
 
+  def perfil
+  end
+
   def tag_info
   end
 

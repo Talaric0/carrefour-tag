@@ -17,9 +17,10 @@
       <p>Tag</p>
     </div>
   <% end %>
-  <div class="profile text-center">
-    <%= image_tag "menu_icons/profile.svg" %>
-    <p>Perfil</p>
-  </div>
-
+  <%= link_to perfil_path do %>
+    <div class="profile text-center">
+      <%= image_tag "menu_icons/profile.svg" %>
+      <p>Perfil</p>
+    </div>
+  <% end %>
 </div>
