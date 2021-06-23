@@ -10,8 +10,8 @@
 
 <div class="form-container">
   <%= simple_form_for(@tag) do |f| %>
-    <%= f.input :maker, label: "Marca", label_html: { class: "new-tag-label" } %>
-    <%= f.input :model, label: "Modelo", label_html: { class: "new-tag-label" } %>
+    <%= f.input :maker, collection: @makers_models_array, label: "Marca", label_html: { class: "new-tag-label" } %>
+    <%= f.input :model, collection: [], label: "Modelo", label_html: { class: "new-tag-label" }, input_html: { class: "select2"} %>
     <%= f.input :plate, label: "Placa", label_html: { class: "new-tag-label" } %>
     <%= f.input :year, label: "Ano", label_html: { class: "new-tag-label" } %>
     <%= f.input :nickname, label: "Apelido do veículo", label_html: { class: "new-tag-label" } %>
@@ -27,3 +27,4 @@
     <%= f.submit "Prosseguir", class: "submit-button" %>
   <% end %>
 </div>
+
