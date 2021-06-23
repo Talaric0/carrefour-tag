@@ -16,7 +16,7 @@ class PagesController < ApplicationController
         end
       else
         @orders_hash[order.tag.nickname] = { "#{@week_day[order.created_at.strftime('%w').to_i]}., #{order.created_at.strftime('%d/%m')}" => [order] }
-      end  
+      end
     end
     @tag_total_amount = tag_total_amount
     @card_total = 670 + @tag_total_amount
@@ -45,7 +45,7 @@ class PagesController < ApplicationController
     sum = 0
     if orders
       orders.each do |order|
-        sum += order.value   
+        sum += order.value
       end
     end
     sum
