@@ -1,0 +1,14 @@
+<div class="user-profile text-center">
+  <%= cl_image_tag display_photo(current_user), aspect_ratio: 1, crop: :fill, class: "avatar-large" %>
+  <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+</div>
+
+<div class="action-buttons d-flex flex-column text-center">
+  <%= link_to edit_user_registration_path, class: "carrefour-button" do %>
+    Edit Profile
+  <% end %>
+
+  <%= link_to destroy_user_session_path, method: :delete, class: "carrefour-button" do %>
+    Log Out
+  <% end %>
+</div>
