@@ -1,7 +1,7 @@
 <div class='bg-white pb-5 pt-4'>
   <h2 class='card-title text-center'>Fatura Fechada</h2>
   <div class='w-100 b-0 m-0'>
-    <img src="/assets/sample-graphic.png" class='w-100'>
+    <%= image_tag "sample-graphic.png" %>
   </div>
 
   <div class='card-padding text-center mt-5'>
@@ -21,7 +21,7 @@
     <ul class='leaders'>
       <li>
         <span class='card-transaction-text'>Pagamento mínimo</span>
-        <span class='card-transaction-values'>R$115,28</span>
+        <span class='card-transaction-values'><%= number_to_currency(@minimum_payment, unit: "R$", separator: "," ) %></span>
       </li>
     </ul>
   </div>
@@ -78,7 +78,7 @@
     <h2 class='card-title'>Lançamentos da Fatura</h2>
     <hr>
 
-    <p class='card-order-date'>DOM, 16/05</p>
+    <p class='card-order-date'>DOM, 16/06</p>
     
     <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
       <div class='d-flex align-items-center justify-content-start'>
@@ -143,7 +143,7 @@
   <div class="card-padding">
     <h2 class='mt-5 card-title'>Lançamentos da TAG</h2>
     <hr>
-
+    <%# OPÇÃO 1 %>
     <% @orders.order('created_at DESC').each do |order|  %>
       <p class='card-order-date'><%= @week_day[order.created_at.strftime('%w').to_i] %>., <%= order.created_at.strftime('%d/%m') %></p>
     
@@ -161,7 +161,7 @@
     <% end %>
 
     <hr>
-
+    <%# OPÇÃO 2 %>
     <% @orders_hash.each do |nickname, dates_hash| %>
       <p class='card-tag-nickname'><%= nickname %></p>
       <% dates_hash.each do |date, orders| %>
