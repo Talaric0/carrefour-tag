@@ -8,11 +8,11 @@
     <div class="d-flex justify-content-around align-items-center card-summary">
       <div class='w-50'>
         <p class='mb-0 card-summary-text'>Valor Total</p>
-        <span>R$</span> <span class='card-summary-value'>768</span><span>,52</span>
+        <span class='card-summary-value'><%= number_to_currency(@card_total, unit: "R$", separator: "," ) %></span>
       </div>
       <div class='w-50'>
         <p class='mb-0 card-summary-text'>Vencimento</p>
-        <span class='card-summary-value'>08</span> <span>de junho</span>
+        <span class='card-summary-value'>08</span> <span>de julho</span>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
       </li>
       <li>
         <span class='card-transaction-text'>Total carrefour TAG</span>
-        <span class='card-transaction-values'>-R$98,52</span>
+        <span class='card-transaction-values'><%= number_to_currency(@tag_total_amount, unit: "R$", separator: "," ) %></span>
       </li>
       <li>
         <span class='card-transaction-text'>Descontos</span>
@@ -58,7 +58,7 @@
       </li>
       <li>
         <span class='card-transaction-text'>TOTAL</span>
-        <span class='card-transaction-values'>R$768,52</span>
+        <span class='card-transaction-values'><%= number_to_currency(@card_total, unit: "R$", separator: "," ) %></span>
       </li>
     </ul>
   </div>
@@ -144,44 +144,45 @@
     <h2 class='mt-5 card-title'>Lançamentos da TAG</h2>
     <hr>
 
-    <p class='card-tag-nickname'>Carro da Jú</p>
-
-    <p class='card-order-date'>SEG, 17/05</p>
+    <% @orders.order('created_at DESC').each do |order|  %>
+      <p class='card-order-date'><%= @week_day[order.created_at.strftime('%w').to_i] %>., <%= order.created_at.strftime('%d/%m') %></p>
     
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>Pedágio Bandeirantes</p>
-          <p class='category'>Pedágio</p>
+      <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+        <div class='d-flex align-items-center justify-content-start'>
+          <img src="/assets/order_icons/four-icon.png">
+          <div>
+            <p class='text'><%= order.location.name %></p>
+            <p class='category'><%= order.location.category %></p>
+            <p class='category'><%= order.tag.nickname %></p>
+          </div>
         </div>
+        <p class='value'><%= number_to_currency(order.value, unit: "R$", separator: "," ) %></p>
       </div>
-      <p class='value'>-R$8,93</p>
-    </div>
+    <% end %>
 
-    <p class='card-order-date'>TER, 18/05</p>
+    <hr>
+
+    <% @orders_hash.each do |nickname, dates_hash| %>
+      <p class='card-tag-nickname'><%= nickname %></p>
+      <% dates_hash.each do |date, orders| %>
+        <p class='card-order-date'><%= date %></p>
+        <% orders.each do |order| %>
+          <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+            <div class='d-flex align-items-center justify-content-start'>
+              <img src="/assets/order_icons/four-icon.png">
+              <div>
+                <p class='text'><%= order.location.name %></p>
+                <p class='category'><%= order.location.category %></p>
+              </div>
+            </div>
+            <p class='value'><%= number_to_currency(order.value, unit: "R$", separator: "," ) %></p>
+          </div>
+        <% end %>   
+      <% end %>
+    <% end %>
     
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>Drive Carrefour Pinheiros</p>
-          <p class='category'>Mercado</p>
-        </div>
-      </div>
-      <p class='value'>-R$8,93</p>
-    </div>
 
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>Posto Shell Center</p>
-          <p class='category'>Posto</p>
-        </div>
-      </div>
-      <p class='value'>-R$69,52</p>
-    </div>
+
   </div>
 
   <div class="card-padding my-5">
