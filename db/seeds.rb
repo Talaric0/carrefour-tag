@@ -83,8 +83,8 @@ User.all.each do |user|
       user: user,
       nickname: "Carro do #{Faker::Name.unique.male_first_name}",
       plate: "#{('A'..'Z').to_a.shuffle[0,3].join}-#{Faker::Number.number(digits: 4)}",
-      maker: maker['fipe_name'],
-      model: model['name'],
+      maker: "#{maker['id']}-#{maker['fipe_name']}",
+      model: model['name'].split(" ")[0],
       year: rand(2000..Date.today.year),
     )
     puts "Created #{new_tag.nickname} with plate #{new_tag.plate}, a #{new_tag.model} from #{new_tag.maker} year #{new_tag.year}"
