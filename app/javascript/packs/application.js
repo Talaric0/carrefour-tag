@@ -27,8 +27,11 @@ import "select2";
 
 // Internal imports, e.g:
 import { updateTagModel } from "../plugins/update_forms";
+import { previewImageOnFileSelect } from '../functions/photo_preview';
 
 document.addEventListener("turbolinks:load", () => {
+  previewImageOnFileSelect();
+  
   const tagMaker = document.getElementById("tag_maker");
   const tagModel = document.getElementById("tag_model");
 
