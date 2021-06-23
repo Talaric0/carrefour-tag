@@ -1,3 +1,5 @@
+import { initSelect2 } from "./init_select2";
+
 export const updateTagModel = (id, tagModel) => {
   const url = `https://fipeapi.appspot.com/api/1/carros/veiculos/${id}.json`;
   fetch(url)
@@ -11,4 +13,5 @@ export const updateTagModel = (id, tagModel) => {
         tagModel.insertAdjacentHTML("beforeend", elem); // insert options into the dropdown
       });
     });
+  initSelect2();
 };

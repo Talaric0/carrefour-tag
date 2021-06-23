@@ -23,7 +23,6 @@ class TagsController < ApplicationController
     JSON.parse(serialized).each do |maker|
       @makers_models_array << "#{maker['id']}-#{maker['fipe_name']}"
     end
-    console
   end
 
   # GET /tags/1/edit
