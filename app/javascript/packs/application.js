@@ -27,11 +27,8 @@ import "select2";
 
 // Internal imports, e.g:
 import { updateTagModel } from "../plugins/update_forms";
-import { initSelect2 } from "../plugins/init_select2";
 
 document.addEventListener("turbolinks:load", () => {
-  // Call your functions here, e.g:
-
   const tagMaker = document.getElementById("tag_maker");
   const tagModel = document.getElementById("tag_model");
 
@@ -44,5 +41,4 @@ document.addEventListener("turbolinks:load", () => {
       updateTagModel(tagMaker.value.split("-")[0], tagModel);
     });
   }
-  // initSelect2();
 });
