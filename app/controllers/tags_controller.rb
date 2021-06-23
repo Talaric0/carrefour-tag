@@ -19,10 +19,11 @@ class TagsController < ApplicationController
     # fetch makers array
     makers_url = 'https://fipeapi.appspot.com/api/1/carros/marcas.json'
     serialized = URI.open(makers_url).read
-    @makers =  []
+    @makers_models_array =  []
     JSON.parse(serialized).each do |maker|
-      @makers << maker['fipe_name']
+      @makers_models_array << "#{maker['id']}-#{maker['fipe_name']}"
     end
+    console
   end
 
   # GET /tags/1/edit
