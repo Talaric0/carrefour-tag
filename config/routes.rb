@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get '/cartao', to: 'pages#cartao' 
+  get '/cartao', to: 'pages#cartao'
+  get '/perfil', to: 'pages#perfil', as: 'perfil_path'
 
   #TAG related routes
   get '/tag', to: 'pages#tag', as: 'tags_page_path'
