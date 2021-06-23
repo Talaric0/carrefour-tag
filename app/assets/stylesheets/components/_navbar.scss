@@ -33,3 +33,12 @@
   color: $medium-gray;
   font-size: 1rem;
 }
+
+.active {
+  img {
+    filter: invert(20%) sepia(88%) saturate(1607%) hue-rotate(195deg) brightness(95%) contrast(97%);
+  }
+  p {
+    color: $dark-blue !important;
+  }
+}
