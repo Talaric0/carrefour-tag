@@ -40,3 +40,13 @@
   margin-bottom: 0;
   text-align: center;
 }
+
+.modal-header {
+  color: $dark-gray;
+  font-family: $primary-font;
+}
+
+.modal-body {
+  color: $medium-gray;
+  font-family: $secondary-font;
+}
