@@ -1,7 +1,7 @@
 <div class='bg-white pb-5 pt-4'>
   <h2 class='card-title text-center'>Fatura Fechada</h2>
   <div class='w-100 b-0 m-0'>
-    <%= image_tag "sample-graphic.png" %>
+    <%= image_tag "sample-graphic.png", class: 'w-100' %>
   </div>
 
   <div class='card-padding text-center mt-5'>
@@ -144,6 +144,8 @@
     <h2 class='mt-5 card-title'>Lançamentos da TAG</h2>
     <hr>
     <%# OPÇÃO 1 %>
+    <%
+=begin %>
     <% @orders.order('created_at DESC').each do |order|  %>
       <p class='card-order-date'><%= @week_day[order.created_at.strftime('%w').to_i] %>., <%= order.created_at.strftime('%d/%m') %></p>
     
@@ -159,8 +161,10 @@
         <p class='value'><%= number_to_currency(order.value, unit: "R$", separator: "," ) %></p>
       </div>
     <% end %>
+    <%
+=end %>
 
-    <hr>
+    
     <%# OPÇÃO 2 %>
     <% @orders_hash.each do |nickname, dates_hash| %>
       <p class='card-tag-nickname'><%= nickname %></p>
