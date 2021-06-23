@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class TagsController < ApplicationController
   before_action :set_tag, only: %i[ show edit update destroy ]
 
@@ -13,6 +15,14 @@ class TagsController < ApplicationController
   # GET /tags/new
   def new
     @tag = Tag.new
+
+    # fetch makers array
+    makers_url = 'https://fipeapi.appspot.com/api/1/carros/marcas.json'
+    serialized = URI.open(makers_url).read
+    @makers =  []
+    JSON.parse(serialized).each do |maker|
+      @makers << maker['fipe_name']
+    end
   end
 
   # GET /tags/1/edit
