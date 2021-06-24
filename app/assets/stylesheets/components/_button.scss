@@ -67,3 +67,16 @@
   margin-bottom: 0;
 }
 
+// Cancel Button
+
+.cancel-button {
+  background-color: transparent;
+  color: #ef3641;
+  border: 1px solid #ef3641;
+  font-family: $primary-font;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
