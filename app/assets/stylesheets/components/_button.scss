@@ -22,18 +22,7 @@
   font-weight: bold;
 }
 
-// Form Button
-
-.carrefour-button {
-  background-color: white;
-  color: $button-color;
-  border: 1px solid $button-color;
-  font-family: $primary-font;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  width: 100%;
-  margin-top: 0.5rem;
-}
+// Form Buttons
 
 .modal-button {
   background-color: white;
@@ -46,6 +35,17 @@
 }
 
 // Primary Buttons
+
+.carrefour-button {
+  background-color: transparent;
+  color: $button-color;
+  border: 1px solid $button-color;
+  font-family: $primary-font;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
 
 .new-tag-button {
   font-family: $button-font;
