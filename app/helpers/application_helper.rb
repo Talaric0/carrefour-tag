@@ -7,7 +7,11 @@ module ApplicationHelper
     end
   end
 
-  def current_class?(test_path)
-    request.path == test_path ? 'active' : ''
+  def highlight_home
+    request.path == root_path ? 'active' : ''
+  end
+
+  def highlight_tab(tab)
+    request.path.include?(tab) ? 'active' : ''
   end
 end
