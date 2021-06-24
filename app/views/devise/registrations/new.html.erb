@@ -24,7 +24,14 @@
                   label: "CPF",
                   required: true,
                   autofocus: true,
-                  label_html: { class: "new-tag-label" }%>
+                  label_html: { class: "new-tag-label" },
+                  input_html: { id: "user_cpf" }%>
+      <%= f.input :address,
+                  label: "Endereço",
+                  required: true,
+                  autofocus: true,
+                  label_html: { class: "new-tag-label" },
+                  input_html: { id: "user_address" }%>
       <%= f.input :photo,
                   label: "Foto",
                   as: :file,
@@ -54,3 +61,11 @@
 <div class="options d-flex flex-column">
   <%= render "devise/shared/links" %>
 </div>
+
+<script src="cleave.min.js"></script>
+<script>
+  const cleaveCpf = new Cleave('#user_cpf', {
+    delimiters: ['.', '.', '-'],
+    blocks: [3, 3, 3, 2]
+  });
+</script>

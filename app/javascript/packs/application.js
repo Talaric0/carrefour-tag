@@ -31,8 +31,11 @@ import swal from "sweetalert2";
 import { updateTagModel } from "../plugins/update_forms";
 import { previewImageOnFileSelect } from "../functions/photo_preview";
 import { initSweetalert } from "../plugins/init_sweetalert";
+import { initAutocomplete } from "../plugins/init_autocomplete";
 
 document.addEventListener("turbolinks:load", () => {
+  // Algolia autocomplete
+  initAutocomplete();
   // Sweet alert stuff
   const unlockButtons = document.querySelectorAll(".btns-wrapper > button");
   if (unlockButtons) {
