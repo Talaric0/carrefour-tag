@@ -28,6 +28,7 @@ p 'Creating 3 new Users...'
   user.first_name = Faker::Name.first_name
   user.last_name = Faker::Name.last_name
   user.cpf = Faker::Number.number(digits: 11)
+  user.address = Faker::Address.full_address
   user.email = "#{user.first_name.downcase}_#{user.last_name.downcase}@gmail.com"
   user.password = '123456'
   user.save!
