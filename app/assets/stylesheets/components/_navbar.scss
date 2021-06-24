@@ -42,3 +42,20 @@
     color: $dark-blue !important;
   }
 }
+
+.tag-notice {
+  position: absolute;
+  background-color: #EF3641;
+  color: white;
+  font-family: $secondary-font;
+  font-size: 0.5rem;
+  border-radius: 50%;
+  padding: 4px;
+  right: 120px;
+  bottom: 36px;
+  z-index: 999;
+}
+
+.hide {
+  display: none;
+}

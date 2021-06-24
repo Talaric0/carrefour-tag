@@ -14,4 +14,8 @@ module ApplicationHelper
   def highlight_tab(tab)
     request.path.include?(tab) ? 'active' : ''
   end
+
+  def show_notice
+    'hide' if current_user.nil? || current_user.tags.length.nonzero?
+  end
 end
