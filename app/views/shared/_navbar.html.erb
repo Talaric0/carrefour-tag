@@ -11,6 +11,9 @@
       <p>Cartão</p>
     </div>
   <% end %>
+  <div class="tag-notice <%= show_notice %>">
+    NOVO
+  </div>
   <%= link_to tags_path do %>
     <div class="tag text-center <%= highlight_tab("tag") %>">
       <%= image_tag "menu_icons/tag.svg" %>
