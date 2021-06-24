@@ -63,6 +63,9 @@ document.addEventListener("turbolinks:load", () => {
             }
           },
           icon: "question",
+          confirmButtonText: isLocked
+            ? 'Desbloquear <i class="fas fa-lock-open"></i>'
+            : 'Bloquear <i class="fas fa-lock"></i>',
         },
         (value) => {
           console.log(value);
