@@ -99,6 +99,13 @@ ul.leaders li {
 
 .card-detailed-transaction .value {
   font-weight: bold;
+  p {
+    font-family: $secondary-font;
+    font-size: small;
+  }
+  span {
+    font-size: large;
+  }
 }
 
 .card-tag-nickname {
