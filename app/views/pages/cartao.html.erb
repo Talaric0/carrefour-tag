@@ -74,187 +74,215 @@
   </div>
 
 
-  <div class='card-padding'>
-    <h2 class='card-title'>Lançamentos da Fatura</h2>
-    <hr>
-
-    <p class='card-order-date'>SEX., 18/06</p>
-    
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>Bonus Premio Seguros</p>
-          <p class='category'>Outros</p>
-        </div>
+  <div id="accordion">
+    <div class="">
+      <div class="" id="headingOne">
+        <h5 class="mb-0">
+          <button class="accordion-btn btn-block collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <div class='d-flex align-items-center justify-content-between'>
+              <h2 class='card-title mb-0'>Lançamentos da Fatura</h2>
+              <i class="fas fa-sort-down card-title"></i>
+            </div>
+            <hr>
+          </button>
+        </h5>
       </div>
-      <p class='value'>R$5,07</p>
-    </div>
 
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>Seguro Conta Paga funcionário</p>
-          <p class='category'>Outros</p>
-        </div>
-      </div>
-      <p class='value'>-R$5,07</p>
-    </div>
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body pt-0">
 
-    <p class='card-order-date'>SEG., 14/06</p>
-    
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>EBANX*SPOTIFY, CURITIBA</p>
-          <p class='category'>Eletrônicos</p>
-        </div>
-      </div>
-      <p class='value'>R$16,90</p>
-    </div>
-
-    <p class='card-order-date'>QUI., 10/06</p>
-    
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>Pagamento por débito direto</p>
-          <p class='category'>Outros</p>
-        </div>
-      </div>
-      <p class='value'>-R$473,21</p>
-    </div>
-
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>RAPPI*Patties Santo Andre</p>
-          <p class='category'>Serviços</p>
-        </div>
-      </div>
-      <p class='value'>R$36,80</p>
-    </div>
-  
-
-  <p class='card-order-date'>TER., 08/06</p>
-    
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>DESCONTO ADICIONAL FUNCIONÁRIOS</p>
-          <p class='category'>Outros</p>
-        </div>
-      </div>
-      <p class='value'>-R$85,20</p>
-    </div>
-    
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>037 - JDI - JUNDIAI</p>
-          <p class='category'>Supermerdado</p>
-        </div>
-      </div>
-      <div class='text-right'>
-        <p class='value'>R$776,55</p>
-        <p class='discount'>Desconto -R$38,83</p>
-      </div>
-    </div>
-
-    <p class='card-order-date'>SEX., 04/06</p>
-    
-    <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-      <div class='d-flex align-items-center justify-content-start'>
-        <img src="/assets/order_icons/four-icon.png">
-        <div>
-          <p class='text'>NETFLIX.COM, SÃO PAULO</p>
-          <p class='category'>Casa</p>
-        </div>
-      </div>
-      <p class='value'>R$32,80</p>
-    </div>
-
-  </div>
-
-  <div class="card-padding">
-    <h2 class='mt-5 card-title'>Lançamentos da TAG</h2>
-    <hr>
-    <%# OPÇÃO 1 %>
-    <%
-=begin %>
-    <% @orders.order('created_at DESC').each do |order|  %>
-      <p class='card-order-date'><%= @week_day[order.created_at.strftime('%w').to_i] %>., <%= order.created_at.strftime('%d/%m') %></p>
-    
-      <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-        <div class='d-flex align-items-center justify-content-start'>
-          <img src="/assets/order_icons/four-icon.png">
-          <div>
-            <p class='text'><%= order.location.name %></p>
-            <p class='category'><%= order.location.category %></p>
-            <p class='category'><%= order.tag.nickname %></p>
-          </div>
-        </div>
-        <p class='value'><%= number_to_currency(order.value, unit: "R$", separator: "," ) %></p>
-      </div>
-    <% end %>
-    <%
-=end %>
-
-    
-    <%# OPÇÃO 2 %>
-    <% @orders_hash.each do |nickname, dates_hash| %>
-      <p class='card-tag-nickname'><%= nickname %></p>
-      <% dates_hash.each do |date, orders| %>
-        <p class='card-order-date'><%= date %></p>
-        <% orders.each do |order| %>
+          <p class='card-order-date'>SEX., 18/06</p>
+      
           <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
             <div class='d-flex align-items-center justify-content-start'>
-              <%= image_tag "order_icons/four-icon.png" %>
+              <img src="/assets/order_icons/four-icon.png">
               <div>
-                <p class='text'><%= order.location.name %></p>
-                <p class='category'><%= order.location.category %></p>
+                <p class='text'>Bonus Premio Seguros</p>
+                <p class='category'>Outros</p>
               </div>
             </div>
-            <p class='value'><%= number_to_currency(order.value, unit: "R$", separator: "," ) %></p>
+            <p class='value'>R$5,07</p>
           </div>
-        <% end %>   
-      <% end %>
-    <% end %>
 
-  </div>
+          <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+            <div class='d-flex align-items-center justify-content-start'>
+              <img src="/assets/order_icons/four-icon.png">
+              <div>
+                <p class='text'>Seguro Conta Paga funcionário</p>
+                <p class='category'>Outros</p>
+              </div>
+            </div>
+            <p class='value'>-R$5,07</p>
+          </div>
 
-  <div class="card-padding my-5">
-    <h2 class='card-title'>Meus Descontos</h2>
-    <hr>
-    <ul class='leaders'>
-      <li>
-        <span class='card-transaction-text'>Nesta fatura</span>
-        <span class='card-transaction-values'>R$124,03</span>
-      </li>
-      <li>
-        <span class='card-transaction-text'>Últimos 12 meses</span>
-        <span class='card-transaction-values'>R$276,60</span>
-      </li>
-    </ul>
-  </div>
+          <p class='card-order-date'>SEG., 14/06</p>
+          
+          <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+            <div class='d-flex align-items-center justify-content-start'>
+              <img src="/assets/order_icons/four-icon.png">
+              <div>
+                <p class='text'>EBANX*SPOTIFY, CURITIBA</p>
+                <p class='category'>Eletrônicos</p>
+              </div>
+            </div>
+            <p class='value'>R$16,90</p>
+          </div>
 
-  <div class="card-padding mt-5 mb-5">
-    <h2 class='card-title'>Tipo de Envio de Fatura</h2>
-    <hr>
-    <div class='d-flex justify-content-between align-items-top my-4'>
-      <div>
-        <p class='mb-0'>Tipo de envio atual</p>
-        <p class='my-0'><strong>E-Mail</strong></p>
+          <p class='card-order-date'>QUI., 10/06</p>
+          
+          <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+            <div class='d-flex align-items-center justify-content-start'>
+              <img src="/assets/order_icons/four-icon.png">
+              <div>
+                <p class='text'>Pagamento por débito direto</p>
+                <p class='category'>Outros</p>
+              </div>
+            </div>
+            <p class='value'>-R$473,21</p>
+          </div>
+
+          <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+            <div class='d-flex align-items-center justify-content-start'>
+              <img src="/assets/order_icons/four-icon.png">
+              <div>
+                <p class='text'>RAPPI*Patties Santo Andre</p>
+                <p class='category'>Serviços</p>
+              </div>
+            </div>
+            <p class='value'>R$36,80</p>
+          </div>
+        
+
+        <p class='card-order-date'>TER., 08/06</p>
+          
+          <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+            <div class='d-flex align-items-center justify-content-start'>
+              <img src="/assets/order_icons/four-icon.png">
+              <div>
+                <p class='text'>DESCONTO ADICIONAL FUNCIONÁRIOS</p>
+                <p class='category'>Outros</p>
+              </div>
+            </div>
+            <p class='value'>-R$85,20</p>
+          </div>
+          
+          <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+            <div class='d-flex align-items-center justify-content-start'>
+              <img src="/assets/order_icons/four-icon.png">
+              <div>
+                <p class='text'>037 - JDI - JUNDIAI</p>
+                <p class='category'>Supermerdado</p>
+              </div>
+            </div>
+            <div class='text-right'>
+              <p class='value'>R$776,55</p>
+              <p class='discount'>Desconto -R$38,83</p>
+            </div>
+          </div>
+
+          <p class='card-order-date'>SEX., 04/06</p>
+          
+          <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+            <div class='d-flex align-items-center justify-content-start'>
+              <img src="/assets/order_icons/four-icon.png">
+              <div>
+                <p class='text'>NETFLIX.COM, SÃO PAULO</p>
+                <p class='category'>Casa</p>
+              </div>
+            </div>
+            <p class='value'>R$32,80</p>
+          </div>
+
+          
+        </div>
       </div>
-        <%= link_to 'ALTERAR ENVIO', '#', class: 'carrefour-btn-secondary' %>
     </div>
-  </div>
-</div>
+    <div class="">
+      <div class="" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="accordion-btn btn-block collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <div class='d-flex align-items-center justify-content-between'>
+              <h2 class='card-title mb-0'>Lançamentos da TAG</h2>
+              <i class="fas fa-sort-down card-title"></i>
+            </div>
+            <hr>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body pt-0">   
+          <% @orders_hash.each do |nickname, dates_hash| %>
+            <p class='card-tag-nickname'><%= nickname %></p>
+            <% dates_hash.each do |date, orders| %>
+              <p class='card-order-date'><%= date %></p>
+              <% orders.each do |order| %>
+                <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+                  <div class='d-flex align-items-center justify-content-start'>
+                    <%= image_tag "order_icons/four-icon.png" %>
+                    <div>
+                      <p class='text'><%= order.location.name %></p>
+                      <p class='category'><%= order.location.category %></p>
+                    </div>
+                  </div>
+                  <p class='value'><%= number_to_currency(order.value, unit: "R$", separator: "," ) %></p>
+                </div>
+              <% end %>   
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <div class="" id="headingThree">
+        <h5 class="mb-0">
+          <button class="accordion-btn btn-block collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <div class='d-flex align-items-center justify-content-between'>
+              <h2 class='card-title mb-0'>Meus Descontos</h2>
+              <i class="fas fa-sort-down card-title"></i>
+            </div>
+            <hr>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body pt-0">
+          <ul class='leaders'>
+            <li>
+              <span class='card-transaction-text'>Nesta fatura</span>
+              <span class='card-transaction-values'>R$124,03</span>
+            </li>
+            <li>
+              <span class='card-transaction-text'>Últimos 12 meses</span>
+              <span class='card-transaction-values'>R$276,60</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <div class="" id="headingFour">
+        <h5 class="mb-0">
+          <button class="accordion-btn btn-block collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <div class='d-flex align-items-center justify-content-between'>
+              <h2 class='card-title mb-0'>Tipo de Envio de Fatura</h2>
+              <i class="fas fa-sort-down card-title"></i>
+            </div>
+            <hr>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+        <div class="card-body pt-0">
+          <div class='d-flex justify-content-between align-items-top my-4'>
+            <div>
+              <p class='mb-0'>Tipo de envio atual</p>
+              <p class='my-0'><strong>E-Mail</strong></p>
+            </div>
+              <%= link_to 'ALTERAR ENVIO', '#', class: 'carrefour-btn-secondary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
 
-  
+</div>
