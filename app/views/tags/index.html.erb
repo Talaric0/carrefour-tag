@@ -12,11 +12,11 @@
         <div class="info"><strong>Modelo:</strong><span><%= tag.model %></span></div>
         <div class="info"><strong>Placa:</strong><span><%= tag.plate %></span></div>
       </div>
-      <%= button_to "Cancelar", tag_path(tag), method: :delete %>
+      <%= button_to "Cancelar", tag_path(tag), method: :delete, class: "carrefour-button" %>
     </div>
   </div>
 <% end %>
 
 <div style="padding-bottom: 65px;">
-  <%= link_to 'Novo Veículo', new_tag_path, class: "btn btn-primary new-vehicle" %>
+  <%= link_to 'Novo Veículo', new_tag_path, class: "new-tag-button new-vehicle" %>
 </div>
