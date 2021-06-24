@@ -7,6 +7,7 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
+import { accordion_arrow } from "../components/accordion_arrow";
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -24,14 +25,54 @@ require("channels");
 import "bootstrap";
 import $ from "jquery";
 import "select2";
+import swal from "sweetalert2";
 
 // Internal imports, e.g:
 import { updateTagModel } from "../plugins/update_forms";
-import { previewImageOnFileSelect } from '../functions/photo_preview';
+import { previewImageOnFileSelect } from "../functions/photo_preview";
+import { initSweetalert } from "../plugins/init_sweetalert";
 
 document.addEventListener("turbolinks:load", () => {
+  // Sweet alert stuff
+  const unlockButtons = document.querySelectorAll(".btns-wrapper > button");
+  if (unlockButtons) {
+    unlockButtons.forEach((button, index) => {
+      // Check if tag is locked or unlocked
+      const isLocked = button.innerText == "Desbloquear";
+
+      initSweetalert(
+        `#sweet-alert-unlock-tag-${index}`,
+        {
+          title: isLocked ? "Debloquear TAG" : "Bloquear TAG",
+          text: isLocked ? "Insira o código enviado por email..." : "",
+          input: "text",
+          inputAttributes: {
+            autocapitalize: "on",
+          },
+          inputPlaceholder: isLocked
+            ? "Digite seu código"
+            : "Motivo do bloqueio...",
+          inputValidator: (value) => {
+            if (!value) {
+              return isLocked
+                ? "Digite seu código"
+                : "Digite o motivo do bloqueio";
+            }
+          },
+          icon: "success",
+          className: "sweet-alert-modal",
+        },
+        (value) => {
+          const link = button.nextElementSibling;
+          link.click();
+        }
+      );
+    });
+  }
+
   previewImageOnFileSelect();
-  
+
+  // form stuff
   const tagMaker = document.getElementById("tag_maker");
   const tagModel = document.getElementById("tag_model");
 
@@ -43,5 +84,9 @@ document.addEventListener("turbolinks:load", () => {
     tagMaker.addEventListener("change", () => {
       updateTagModel(tagMaker.value.split("-")[0], tagModel);
     });
+  }
+
+  if (document.querySelectorAll('.accordion-btn')){
+    accordion_arrow();
   }
 });
