@@ -44,27 +44,32 @@ document.addEventListener("turbolinks:load", () => {
         `#sweet-alert-unlock-tag-${index}`,
         {
           title: isLocked ? "Debloquear TAG" : "Bloquear TAG",
-          text: isLocked ? "Insira o código enviado por email..." : "",
+          text: isLocked
+            ? "Insira o código enviado por email..."
+            : "Insira o motivo do bloqueio",
           input: "text",
           inputAttributes: {
             autocapitalize: "on",
           },
+          showCancelButton: true,
           inputPlaceholder: isLocked
             ? "Digite seu código"
             : "Motivo do bloqueio...",
           inputValidator: (value) => {
             if (!value) {
               return isLocked
-                ? "Digite seu código"
+                ? "Digite o código enviado para seu email"
                 : "Digite o motivo do bloqueio";
             }
           },
-          icon: "success",
-          className: "sweet-alert-modal",
+          icon: "question",
         },
         (value) => {
-          const link = button.nextElementSibling;
-          link.click();
+          console.log(value);
+          if (value.isConfirmed) {
+            const link = button.nextElementSibling;
+            link.click();
+          }
         }
       );
     });
@@ -86,7 +91,7 @@ document.addEventListener("turbolinks:load", () => {
     });
   }
 
-  if (document.querySelectorAll('.accordion-btn')){
+  if (document.querySelectorAll(".accordion-btn")) {
     accordion_arrow();
   }
 });
