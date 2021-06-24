@@ -34,8 +34,49 @@ span {
   }
 }
 
+.order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: nowrap;
+  .text {
+    width: fit-content;
+    flex-shrink: 0;
+    padding-right: 5px;
+  }
+  .dots {
+    color: #C6CFD5;
+    overflow: hidden;
+  }
+  .value {
+    color: fit-content;
+    padding-left: 5px;
+    flex-shrink: 0;
+  }
+}
+
+.order .value {
+  font-weight: bold;
+  p {
+    font-family: $secondary-font;
+    font-size: small;
+  }
+  span {
+    font-size: large;
+  }
+}
+
+.order .text {
+  font-size: small;
+  margin: 10px 0;
+}
+
+#total-value {
+  font-size: xx-large;
+}
+
 ul.leaders {
- 
   padding: 0;
   overflow-x: hidden;
   list-style: none
@@ -104,6 +145,8 @@ ul.leaders li {
 
 .card-detailed-transaction .value {
   font-weight: bold;
+  flex-shrink: 0;
+  padding-left: 5px;
   p {
     font-family: $secondary-font;
     font-size: small;
