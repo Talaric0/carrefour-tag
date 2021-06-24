@@ -25,6 +25,12 @@
                   required: true,
                   autofocus: true,
                   label_html: { class: "new-tag-label" }%>
+      <%= f.input :address,
+                  label: "Endereço",
+                  required: true,
+                  autofocus: true,
+                  label_html: { class: "new-tag-label" },
+                  input_html: { id: "user_address" }%>
       <%= f.input :photo,
                   label: "Foto",
                   as: :file,

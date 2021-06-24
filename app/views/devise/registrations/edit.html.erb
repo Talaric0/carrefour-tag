@@ -8,6 +8,7 @@
     <%= f.input :first_name, required: true, autofocus: true %>
     <%= f.input :last_name, required: true, autofocus: true %>
     <%= f.input :cpf, required: true, autofocus: true %>
+    <%= f.input :address, required: true, autofocus: true, input_html: { id: "user_address" }%>
     <%= f.input :photo, as: :file, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
