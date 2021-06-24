@@ -1,4 +1,4 @@
-.carrefour-btn-primary{
+.carrefour-btn-primary {
   background-color: $blue;
   color: white;
   font-weight: bold;
@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-.carrefour-btn-outline-primary{
+.carrefour-btn-outline-primary {
   background-color: white;
   color: $blue;
   font-weight: bold;
@@ -17,7 +17,7 @@
   border: 2px $blue solid;
 }
 
-.carrefour-btn-secondary{
+.carrefour-btn-secondary {
   color: $blue;
   font-weight: bold;
 }
@@ -49,7 +49,7 @@
 
 .new-tag-button {
   font-family: $button-font;
-  background-color: #1F5BC5;
+  background-color: #1f5bc5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   color: white;
@@ -66,4 +66,6 @@
   margin-top: 12px;
   margin-bottom: 0;
 }
-
+.btns-wrapper {
+  width: 37%;
+}

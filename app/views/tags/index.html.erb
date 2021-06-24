@@ -15,7 +15,7 @@
       <div class="btns-wrapper">
         <%= button_to "Cancelar", tag_path(tag), method: :delete, class: "carrefour-button" %>
         <%# Cancel button stuff down here %>
-        <button id=<%="sweet-alert-unlock-tag-#{index}"%> class="btn btn-outline-secondary"><%= tag.locked ? 'Desbloquear' : 'Bloquear'%></button>
+        <button id=<%="sweet-alert-unlock-tag-#{index}"%> class="btn btn-outline-secondary carrefour-button"><%= tag.locked ? 'Desbloquear' : 'Bloquear'%></button>
         <%= link_to "", unlock_tag_path(tag), id: "unlock-link", class: "hidden" %>
       </div>
     </div>
