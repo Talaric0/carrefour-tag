@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
@@ -9,6 +10,7 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 $primary-font: "Archivo";
 $secondary-font: "Almarai";
+$button-font: "Inter";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
