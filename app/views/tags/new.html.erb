@@ -41,7 +41,6 @@
   <% end %>
 </div>
 
-<script src="cleave.min.js"></script>
 <script>
   const cleavePlate = new Cleave('#tag_plate', {
     delimiter: '-',
@@ -50,6 +49,7 @@
   });
   const cleaveYear = new Cleave('#tag_year', {
     blocks: [4],
+    numericOnly: true,
     uppercase: true
   });
 </script>

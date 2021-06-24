@@ -62,10 +62,12 @@
   <%= render "devise/shared/links" %>
 </div>
 
-<script src="cleave.min.js"></script>
 <script>
-  const cleaveCpf = new Cleave('#user_cpf', {
-    delimiters: ['.', '.', '-'],
-    blocks: [3, 3, 3, 2]
-  });
+  setTimeout(() => {
+    const cleaveCpf = new Cleave('#user_cpf', {
+      delimiters: ['.', '.', '-'],
+      numericOnly: true,
+      blocks: [3, 3, 3, 2]
+    });
+  }, 300);
 </script>
