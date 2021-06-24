@@ -43,8 +43,7 @@
 <script src="cleave.min.js"></script>
 <script>
   const cleaveCpf = new Cleave('#user_cpf', {
-    delimiter: '.',
-    numeral: true,
+    delimiters: ['.', '.', '-'],
     blocks: [3, 3, 3, 2]
   });
 </script>
