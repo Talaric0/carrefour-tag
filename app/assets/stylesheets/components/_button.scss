@@ -44,7 +44,8 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   width: 100%;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
 }
 
 .new-tag-button {
@@ -66,6 +67,22 @@
   margin-top: 12px;
   margin-bottom: 0;
 }
+
+// Cancel Button
+
+.cancel-button {
+  background-color: transparent;
+  color: #ef3641;
+  border: 1px solid #ef3641;
+  font-family: $primary-font;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
 .btns-wrapper {
   width: 37%;
 }
+
