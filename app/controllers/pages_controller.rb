@@ -19,7 +19,7 @@ class PagesController < ApplicationController
       end
     end
     @tag_total_amount = tag_total_amount
-    @card_total = 670 + @tag_total_amount
+    @card_total = 777.85 + @tag_total_amount
     @minimum_payment = @card_total * 0.15
   end
 
