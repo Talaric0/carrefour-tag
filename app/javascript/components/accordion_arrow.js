@@ -1,5 +1,5 @@
 
-const arrow_up = () => {
+const accordion_arrow = () => {
   const buttons = document.querySelectorAll('.accordion-btn');
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -14,4 +14,4 @@ const arrow_up = () => {
   })
 }
 
-export { arrow_up };
+export { accordion_arrow };
