@@ -26,7 +26,12 @@ span {
 }
 
 .card-summary-value {
-  font-size: x-large;
+  p {
+    font-size: small;
+  }
+  span {
+    font-size: x-large;
+  }
 }
 
 ul.leaders {

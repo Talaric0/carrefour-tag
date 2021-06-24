@@ -8,22 +8,19 @@
     <div class="d-flex justify-content-around align-items-center card-summary">
       <div class='w-50'>
         <p class='mb-0 card-summary-text'>Valor Total</p>
-        <span class='card-summary-value'><%= number_to_currency(@card_total, unit: "R$", separator: "," ) %></span>
+        <p class='card-summary-value'>R$<span><%= @card_total.to_s.split('.').first %></span>,<%= number_to_currency(@card_total, unit: "R$", separator: "," ).split(',').last %></p>
       </div>
       <div class='w-50'>
         <p class='mb-0 card-summary-text'>Vencimento</p>
-        <span class='card-summary-value'>08</span> <span>de julho</span>
+        <p class='card-summary-value'><span>08</span> de julho</p>
       </div>
     </div>
   </div>
 
-  <div class='card-padding my-4'>
-    <ul class='leaders'>
-      <li>
-        <span class='card-transaction-text'>Pagamento mínimo</span>
-        <span class='card-transaction-values'><%= number_to_currency(@minimum_payment, unit: "R$", separator: "," ) %></span>
-      </li>
-    </ul>
+  <div class='card-padding my-4 w-100 order'>
+    <p class='d-inline text'>Pagamento mínimo</p>
+    <p class='d-inline dots'>..............................................</p>
+    <p class='d-inline value'>R$<span><%= @minimum_payment.to_s.split('.').first %></span>,<%= number_to_currency(@minimum_payment, unit: "R$", separator: "," ).split(',').last %></p>
   </div>
 
   <div class="card-padding">
