@@ -25,14 +25,54 @@ import { accordion_arrow } from "../components/accordion_arrow";
 import "bootstrap";
 import $ from "jquery";
 import "select2";
+import swal from "sweetalert2";
 
 // Internal imports, e.g:
 import { updateTagModel } from "../plugins/update_forms";
-import { previewImageOnFileSelect } from '../functions/photo_preview';
+import { previewImageOnFileSelect } from "../functions/photo_preview";
+import { initSweetalert } from "../plugins/init_sweetalert";
 
 document.addEventListener("turbolinks:load", () => {
+  // Sweet alert stuff
+  const unlockButtons = document.querySelectorAll(".btns-wrapper > button");
+  if (unlockButtons) {
+    unlockButtons.forEach((button, index) => {
+      // Check if tag is locked or unlocked
+      const isLocked = button.innerText == "Desbloquear";
+
+      initSweetalert(
+        `#sweet-alert-unlock-tag-${index}`,
+        {
+          title: isLocked ? "Debloquear TAG" : "Bloquear TAG",
+          text: isLocked ? "Insira o código enviado por email..." : "",
+          input: "text",
+          inputAttributes: {
+            autocapitalize: "on",
+          },
+          inputPlaceholder: isLocked
+            ? "Digite seu código"
+            : "Motivo do bloqueio...",
+          inputValidator: (value) => {
+            if (!value) {
+              return isLocked
+                ? "Digite seu código"
+                : "Digite o motivo do bloqueio";
+            }
+          },
+          icon: "success",
+          className: "sweet-alert-modal",
+        },
+        (value) => {
+          const link = button.nextElementSibling;
+          link.click();
+        }
+      );
+    });
+  }
+
   previewImageOnFileSelect();
-  
+
+  // form stuff
   const tagMaker = document.getElementById("tag_maker");
   const tagModel = document.getElementById("tag_model");
 
