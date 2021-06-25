@@ -1,5 +1,11 @@
 class PagesController < ApplicationController
   def home
+    @tag_total = tag_total_amount
+    @card_amount = 730.50
+    @discounts = 60.50
+    @card_total = @card_amount + @tag_total - @discounts
+    @limit = 4000
+    @available = @limit - @card_total
   end
 
   def cartao
@@ -19,7 +25,7 @@ class PagesController < ApplicationController
       end
     end
     @tag_total_amount = tag_total_amount
-    @card_total = 777.85 + @tag_total_amount
+    @card_total = 730.50 - 60.50 + @tag_total_amount
     @minimum_payment = @card_total * 0.15
   end
 
