@@ -6,6 +6,8 @@
   border-radius: 7px;
   transition: all 0.5s ease-in-out;
   box-shadow: 5px 13px 15px -4px rgba(30, 30, 60, 0.25);
+  text-decoration: none;
+  color: #524e4e;
 
   p {
     margin-bottom: 1rem;
@@ -15,7 +17,8 @@
     align-items: center;
     justify-content: space-between;
     .car_info {
-      width: 50%;
+      width: 100%;
+      margin: 0 auto;
       .info {
         display: flex;
         justify-content: space-between;
