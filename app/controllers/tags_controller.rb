@@ -10,6 +10,25 @@ class TagsController < ApplicationController
 
   # GET /tags/1 or /tags/1.json
   def show
+    @tag = Tag.find(params[:id])
+    @orders = @tag.orders
+    @locations = @tag.locations
+    @markers = @locations.geocoded.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude,
+        info_window: render_to_string(partial: "map_info_window", locals: { location: location })
+      }
+    end
+    @week_day = %w[DOM SEG TER QUAR QUI SEX SAB]
+    @orders_hash = {}
+    @orders.order('created_at DESC').each do |order|
+      if @orders_hash["#{@week_day[order.created_at.strftime('%w').to_i]}., #{order.created_at.strftime('%d/%m')}"]
+        @orders_hash["#{@week_day[order.created_at.strftime('%w').to_i]}., #{order.created_at.strftime('%d/%m')}"] << order
+      else
+        @orders_hash.merge!({ "#{@week_day[order.created_at.strftime('%w').to_i]}., #{order.created_at.strftime('%d/%m')}" => [order] })
+      end
+    end
   end
 
   # GET /tags/new
