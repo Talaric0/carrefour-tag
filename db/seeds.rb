@@ -68,27 +68,19 @@ bruno = User.new
 
 p '------------------------------------------------------------------------------------'
 
-p 'Creating 4 new Locations...'
+p 'Creating new Locations...'
 
-location1 = Location.new
-location1.name = 'MultiPark Moema'
-location1.category = 'Estacionamento'
-location1.save
+locations = {
+  posto: ['Posto Shell Center', 'Posto BR Aeroporto', 'Posto Shell Copacabana', 'Posto Ipiranga Rua da Passagem'],
+  mercado: ['Drive Carrefour Pinheiros', 'Carrefour Barra da Tijuca', 'Carrefour Norte Shopping'],
+  estacionamento: ['MultiPark Moema', 'Estacionamento Barra Shopping', 'Estacionamento Rio Sul', 'Estacionamento Glória'],
+  pedágio: ['Pedágio Bandeirantes', 'CCR Ponte Rio-Niterói', 'CCR Via Lagos', 'Linha Amarela SA']
+}
 
-location2 = Location.new
-location2.name = 'Posto Shell Center'
-location2.category = 'Posto'
-location2.save
-
-location3 = Location.new
-location3.name = 'Drive Carrefour Pinheiros'
-location3.category = 'Mercado'
-location3.save
-
-location4 = Location.new
-location4.name = 'Pedágio Bandeirantes'
-location4.category = 'Pedágio'
-location4.save
+locations.each do |key, value|
+  p "Creating #{key.to_s.capitalize}s"
+  value.each { |location| Location.create!(name: location, category: key.to_s.capitalize)}
+end
 
 p '------------------------------------------------------------------------------------'
 
@@ -121,7 +113,7 @@ User.all.each do |user|
     #adding orders to TAG
     t1 = Time.parse("2021-06-01 12:00:00")
 	  t2 = Time.parse("2021-06-23 17:00:00")
-    3.times do
+    (1..5).to_a.sample.times do
       order = Order.new
       order.tag = new_tag
       order.location = Location.all.sample
@@ -130,7 +122,7 @@ User.all.each do |user|
       order.save
     end
   end
-  puts "Created 3 orders for each TAG"
+  puts "Created orders for each TAG"
 end
 
 puts "DONE!"
