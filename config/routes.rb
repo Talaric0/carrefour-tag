@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :tags, only: [ :index, :show, :new, :create, :edit, :update, :destroy] do
     member do
       get 'unlock', as: 'unlock'
+      get 'cancel', as: 'cancel'
     end
   end
 

@@ -32,53 +32,28 @@ import { updateTagModel } from "../plugins/update_forms";
 import { previewImageOnFileSelect } from "../functions/photo_preview";
 import { initSweetalert } from "../plugins/init_sweetalert";
 import { initAutocomplete } from "../plugins/init_autocomplete";
+import { unlockButtonAlert } from "../functions/unlock_button";
+import { cancelButtonAlert } from "../functions/cancel_button";
 
 document.addEventListener("turbolinks:load", () => {
   // Algolia autocomplete
   initAutocomplete();
-  // Sweet alert stuff
-  const unlockButtons = document.querySelectorAll(".btns-wrapper > button");
-  if (unlockButtons) {
-    unlockButtons.forEach((button, index) => {
-      // Check if tag is locked or unlocked
-      const isLocked = button.innerText == "Desbloquear";
 
-      initSweetalert(
-        `#sweet-alert-unlock-tag-${index}`,
-        {
-          title: isLocked ? "Debloquear TAG" : "Bloquear TAG",
-          text: isLocked
-            ? "Insira o código enviado por email..."
-            : "Insira o motivo do bloqueio",
-          input: "text",
-          inputAttributes: {
-            autocapitalize: "on",
-          },
-          showCancelButton: true,
-          inputPlaceholder: isLocked
-            ? "Digite seu código"
-            : "Motivo do bloqueio...",
-          inputValidator: (value) => {
-            if (!value) {
-              return isLocked
-                ? "Digite o código enviado para seu email"
-                : "Digite o motivo do bloqueio";
-            }
-          },
-          icon: "question",
-          confirmButtonText: isLocked
-            ? 'Desbloquear <i class="fas fa-lock-open"></i>'
-            : 'Bloquear <i class="fas fa-lock"></i>',
-        },
-        (value) => {
-          console.log(value);
-          if (value.isConfirmed) {
-            const link = button.nextElementSibling;
-            link.click();
-          }
-        }
-      );
-    });
+  // Sweet alert stuff
+  // lock/unlock btns
+  const unlockButtons = document.querySelectorAll(
+    ".btns-wrapper > button:nth-of-type(2)"
+  );
+  if (unlockButtons) {
+    unlockButtonAlert(unlockButtons);
+  }
+
+  // cancel tag buttons
+  const cancelButtons = document.querySelectorAll(
+    ".btns-wrapper > button:nth-child(1)"
+  );
+  if (cancelButtons) {
+    cancelButtonAlert(cancelButtons);
   }
 
   previewImageOnFileSelect();

@@ -1,7 +1,7 @@
 require 'open-uri'
 
 class TagsController < ApplicationController
-  before_action :set_tag, only: %i[ show edit update destroy unlock]
+  before_action :set_tag, only: %i[ show edit update destroy unlock cancel]
 
   # GET /tags or /tags.json
   def index
@@ -73,6 +73,11 @@ class TagsController < ApplicationController
 
   def unlock
     @tag.toggle!(:locked)
+    redirect_to tags_url
+  end
+
+  def cancel
+    @tag.update(canceled: true)
     redirect_to tags_url
   end
 
