@@ -232,7 +232,7 @@
               <% orders.each do |order| %>
                 <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
                   <div class='d-flex align-items-center justify-content-start'>
-                    <%= image_tag "order_icons/car_icon.png", class: 'order-icon' %>
+                    <%= image_tag "order_icons/#{order.location.icon}.png", class: 'order-icon' %>
                     <div>
                       <p class='text'><%= order.location.name %></p>
                       <p class='category'><%= order.location.category %></p>
