@@ -1,12 +1,12 @@
 import { initSweetalert } from "../plugins/init_sweetalert";
 
 export const unlockButtonAlert = (unlockButtons) => {
-  unlockButtons.forEach((button, index) => {
+  unlockButtons.forEach((button) => {
     // Check if tag is locked or unlocked
     const isLocked = button.innerText == "Desbloquear";
 
     initSweetalert(
-      `#sweet-alert-unlock-tag-${index}`,
+      "#sweet-alert-unlock-tag",
       {
         title: isLocked ? "Debloquear TAG" : "Bloquear TAG",
         text: isLocked

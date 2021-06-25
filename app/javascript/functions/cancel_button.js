@@ -1,9 +1,9 @@
 import { initSweetalert } from "../plugins/init_sweetalert";
 
 export const cancelButtonAlert = (cancelButtons) => {
-  cancelButtons.forEach((button, index) => {
+  cancelButtons.forEach((button) => {
     initSweetalert(
-      `#sweet-alert-cancel-tag-${index}`,
+      "#sweet-alert-cancel-tag",
       {
         title: "Cancelar TAG",
         text: "Tem certeza que deseja cancelar essa TAG?",
