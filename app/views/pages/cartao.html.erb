@@ -100,15 +100,17 @@
           </button>
         </h5>
       </div>
+    </div>
 
+    <div>
       <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body pt-0">
+        <div class="pt-0">
 
           <p class='card-order-date'>SEX., 18/06</p>
 
           <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
             <div class='d-flex align-items-center justify-content-start'>
-              <%= image_tag "order_icons/four-icon.png" %>
+              <%= image_tag "order_icons/yellow_icon.png", class: 'order-icon' %>
               <div>
                 <p class='text'>Bonus Premio Seguros</p>
                 <p class='category'>Outros</p>
@@ -119,7 +121,7 @@
 
           <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
             <div class='d-flex align-items-center justify-content-start'>
-              <%= image_tag "order_icons/four-icon.png" %>
+              <%= image_tag "order_icons/yellow_icon.png", class: 'order-icon' %>
               <div>
                 <p class='text'>Seguro Conta Paga funcionário</p>
                 <p class='category'>Outros</p>
@@ -132,7 +134,7 @@
 
           <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
             <div class='d-flex align-items-center justify-content-start'>
-              <%= image_tag "order_icons/four-icon.png" %>
+              <%= image_tag "order_icons/electronic_icon.png", class: 'order-icon' %>
               <div>
                 <p class='text'>EBANX*SPOTIFY, CURITIBA</p>
                 <p class='category'>Eletrônicos</p>
@@ -145,7 +147,7 @@
 
           <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
             <div class='d-flex align-items-center justify-content-start'>
-              <%= image_tag "order_icons/four-icon.png" %>
+              <%= image_tag "order_icons/yellow_icon.png", class: 'order-icon' %>
               <div>
                 <p class='text'>Pagamento por débito direto</p>
                 <p class='category'>Outros</p>
@@ -156,7 +158,7 @@
 
           <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
             <div class='d-flex align-items-center justify-content-start'>
-              <%= image_tag "order_icons/four-icon.png" %>
+              <%= image_tag "order_icons/utility_icon.png", class: 'order-icon' %>
               <div>
                 <p class='text'>RAPPI*Patties Santo Andre</p>
                 <p class='category'>Serviços</p>
@@ -170,7 +172,7 @@
 
           <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
             <div class='d-flex align-items-center justify-content-start'>
-              <%= image_tag "order_icons/four-icon.png" %>
+              <%= image_tag "order_icons/yellow_icon.png", class: 'order-icon' %>
               <div>
                 <p class='text'>DESCONTO ADICIONAL FUNCIONÁRIOS</p>
                 <p class='category'>Outros</p>
@@ -181,7 +183,7 @@
 
           <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
             <div class='d-flex align-items-center justify-content-start'>
-              <%= image_tag "order_icons/four-icon.png" %>
+              <%= image_tag "order_icons/carrefour_icon.png", class: 'order-icon' %>
               <div>
                 <p class='text'>037 - JDI - JUNDIAI</p>
                 <p class='category'>Supermerdado</p>
@@ -197,7 +199,7 @@
 
           <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
             <div class='d-flex align-items-center justify-content-start'>
-              <%= image_tag "order_icons/four-icon.png" %>
+              <%= image_tag "order_icons/home_icon.png", class: 'order-icon' %>
               <div>
                 <p class='text'>NETFLIX.COM, SÃO PAULO</p>
                 <p class='category'>Casa</p>
@@ -222,7 +224,7 @@
         </h5>
       </div>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body pt-0">
+        <div class="pt-0">
           <% @orders_hash.each do |nickname, dates_hash| %>
             <p class='card-tag-nickname'><%= nickname %></p>
             <% dates_hash.each do |date, orders| %>
@@ -230,7 +232,7 @@
               <% orders.each do |order| %>
                 <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
                   <div class='d-flex align-items-center justify-content-start'>
-                    <%= image_tag "order_icons/four-icon.png" %>
+                    <%= image_tag "order_icons/car_icon.png", class: 'order-icon' %>
                     <div>
                       <p class='text'><%= order.location.name %></p>
                       <p class='category'><%= order.location.category %></p>
@@ -257,7 +259,7 @@
         </h5>
       </div>
       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-        <div class="card-body pt-0">
+        <div class=" pt-0">
 
           <div class='w-100 order'>
             <p class='text'>Nesta fatura</p>
@@ -291,7 +293,7 @@
         </h5>
       </div>
       <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-        <div class="card-body pt-0">
+        <div class="pt-0">
           <div class='d-flex justify-content-between align-items-top my-4'>
             <div>
               <p class='mb-0'>Tipo de envio atual</p>
