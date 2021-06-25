@@ -68,19 +68,27 @@ bruno = User.new
 
 p '------------------------------------------------------------------------------------'
 
-p 'Creating new Locations...'
+p 'Creating 4 new Locations...'
 
-locations = {
-  posto: ['Posto Shell Center', 'Posto BR Aeroporto', 'Posto Shell Copacabana', 'Posto Ipiranga Rua da Passagem'],
-  mercado: ['Drive Carrefour Pinheiros', 'Carrefour Barra da Tijuca', 'Carrefour Norte Shopping'],
-  estacionamento: ['MultiPark Moema', 'Estacionamento Barra Shopping', 'Estacionamento Rio Sul', 'Estacionamento Glória'],
-  pedágio: ['Pedágio Bandeirantes', 'CCR Ponte Rio-Niterói', 'CCR Via Lagos', 'Linha Amarela SA']
-}
+location1 = Location.new
+location1.name = 'MultiPark Moema'
+location1.category = 'Estacionamento'
+location1.save
 
-locations.each do |key, value|
-  p "Creating #{key.to_s.capitalize}s"
-  value.each { |location| Location.create!(name: location, category: key.to_s.capitalize)}
-end
+location2 = Location.new
+location2.name = 'Posto Shell Center'
+location2.category = 'Posto'
+location2.save
+
+location3 = Location.new
+location3.name = 'Drive Carrefour Pinheiros'
+location3.category = 'Mercado'
+location3.save
+
+location4 = Location.new
+location4.name = 'Pedágio Bandeirantes'
+location4.category = 'Pedágio'
+location4.save
 
 p '------------------------------------------------------------------------------------'
 
