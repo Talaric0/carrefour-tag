@@ -38,6 +38,34 @@ p 'Creating 3 new Users...'
   p "#{user.first_name} created with email #{user.email} and password 123456"
 end
 
+p 'Creating users for André and Bruno'
+
+andre = User.new
+  andre.first_name = "André"
+  andre.last_name = "Carneiro"
+  andre.cpf = "12345678910"
+  andre.address = Faker::Address.full_address
+  andre.email = "#{andre.first_name.downcase.parameterize}.#{andre.last_name.downcase.parameterize}@gmail.com"
+  andre.password = '123456'
+  andre.save!
+  andre.photo.attach(io: open('https://ca.slack-edge.com/T024J94Q9MY-U024UNJK6Q3-a074b806d67a-512'),
+                     filename: "#{andre.first_name.parameterize}_avatar.jpg")
+
+  p "#{andre.first_name} created with email #{andre.email} and password 123456"
+
+bruno = User.new
+  bruno.first_name = "Bruno"
+  bruno.last_name = "Francisco"
+  bruno.cpf = "12345678911"
+  bruno.address = Faker::Address.full_address
+  bruno.email = "#{bruno.first_name.downcase.parameterize}.#{bruno.last_name.downcase.parameterize}@gmail.com"
+  bruno.password = '123456'
+  bruno.save!
+  bruno.photo.attach(io: open('https://ca.slack-edge.com/T024J94Q9MY-U025AUYL4NM-f07ad27ee974-512'),
+                     filename: "#{bruno.first_name.parameterize}_avatar.jpg")
+
+  p "#{bruno.first_name} created with email #{bruno.email} and password 123456"
+
 p '------------------------------------------------------------------------------------'
 
 p 'Creating 4 new Locations...'
