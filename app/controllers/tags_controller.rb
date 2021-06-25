@@ -92,7 +92,7 @@ class TagsController < ApplicationController
 
   def unlock
     @tag.toggle!(:locked)
-    redirect_to tags_url
+    redirect_to @tag
   end
 
   def cancel
