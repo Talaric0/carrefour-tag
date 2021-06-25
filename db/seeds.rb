@@ -38,28 +38,63 @@ p 'Creating 3 new Users...'
   p "#{user.first_name} created with email #{user.email} and password 123456"
 end
 
+p 'Creating users for André and Bruno'
+
+andre = User.new
+  andre.first_name = "André"
+  andre.last_name = "Carneiro"
+  andre.cpf = "12345678910"
+  andre.address = Faker::Address.full_address
+  andre.email = "#{andre.first_name.downcase.parameterize}.#{andre.last_name.downcase.parameterize}@gmail.com"
+  andre.password = '123456'
+  andre.save!
+  andre.photo.attach(io: open('https://ca.slack-edge.com/T024J94Q9MY-U024UNJK6Q3-a074b806d67a-512'),
+                     filename: "#{andre.first_name.parameterize}_avatar.jpg")
+
+  p "#{andre.first_name} created with email #{andre.email} and password 123456"
+
+bruno = User.new
+  bruno.first_name = "Bruno"
+  bruno.last_name = "Francisco"
+  bruno.cpf = "12345678911"
+  bruno.address = Faker::Address.full_address
+  bruno.email = "#{bruno.first_name.downcase.parameterize}.#{bruno.last_name.downcase.parameterize}@gmail.com"
+  bruno.password = '123456'
+  bruno.save!
+  bruno.photo.attach(io: open('https://ca.slack-edge.com/T024J94Q9MY-U025AUYL4NM-f07ad27ee974-512'),
+                     filename: "#{bruno.first_name.parameterize}_avatar.jpg")
+
+  p "#{bruno.first_name} created with email #{bruno.email} and password 123456"
+
 p '------------------------------------------------------------------------------------'
 
 p 'Creating 4 new Locations...'
 
 location1 = Location.new
-location1.name = 'MultiPark Moema'
+location1.name = 'MultiPark ARQ Moema'
 location1.category = 'Estacionamento'
+location1.address = 'Av. Rouxinol, 55, São Paulo'
 location1.save
 
 location2 = Location.new
 location2.name = 'Posto Shell Center'
 location2.category = 'Posto'
+location2.address = 'R. dos Macunis, 644, São Paulo'
 location2.save
 
 location3 = Location.new
 location3.name = 'Drive Carrefour Pinheiros'
 location3.category = 'Mercado'
+location3.address = 'Av. Rebouças, 3970, São Paulo'
 location3.save
 
 location4 = Location.new
 location4.name = 'Pedágio Bandeirantes'
 location4.category = 'Pedágio'
+location4.address = 'SP-348, Caieiras - SP'
+location4.save
+location4.latitude = -46.813007
+location4.longitude = -23.347132
 location4.save
 
 p '------------------------------------------------------------------------------------'
@@ -93,7 +128,7 @@ User.all.each do |user|
     #adding orders to TAG
     t1 = Time.parse("2021-06-01 12:00:00")
 	  t2 = Time.parse("2021-06-23 17:00:00")
-    3.times do
+    (1..5).to_a.sample.times do
       order = Order.new
       order.tag = new_tag
       order.location = Location.all.sample
@@ -102,7 +137,7 @@ User.all.each do |user|
       order.save
     end
   end
-  puts "Created 3 orders for each TAG"
+  puts "Created orders for each TAG"
 end
 
 puts "DONE!"

@@ -31,13 +31,13 @@
   <div class="balance-info d-flex justify-content-between align-items-end">
     <div class="available-limit">
       <p>DISPONÍVEL</p>
-      <h2>R$ <span>850,</span>59</h2>
+      <h2>R$ <span><%= number_to_currency(@available, unit: "", separator: ",", delimiter: "." ).split(",").first %></span>,<%= number_to_currency(@available, unit: "R$", separator: "," ).split(',').last %></h2>
     </div>
     <p>AUMENTAR LIMITE <span><i class="fas fa-chevron-right chevron-right"></i></span></p>
   </div>
   <div class="limit">
     <div class="limit-bar"></div>
-    <p class="limit-info">Limite Total R$ <span>4.000,</span>00</p>
+    <p class="limit-info">Limite Total R$ <span><%= @limit %>,</span>00</p>
   </div>
 </div>
 
@@ -48,7 +48,7 @@
   </div>
   <div class="due-date d-flex align-items-center">
     <p>Dia do vencimento</p>
-    <h3>05 <span>JUL</span></h3>
+    <h3>08 <span>JUL</span></h3>
   </div>
 </div>
 
@@ -66,11 +66,34 @@
 
 <div class="credit-card-statement">
   <h3 class="border-bottom">Última Fatura</h3>
-  <div class="statement-details d-flex align-items-center">
-    <i class="fas fa-shopping-bag"></i>
-    <div class="empty-message">
-      <h4>Sua fatura está vazia :(</h4>
-      <p>Quando houver lançamentos, sua fatura aparecerá aqui</p>
+  <div class="statement-details">
+    <div class="lancamentos-cartao d-flex justify-content-center">
+      <p class="flex-shrink-0">Lançamentos da Fatura</p>
+      <div class="dots">
+        <p>...........................................................................................................................................................................................................................................................................................................................................................................................................................................................</p>
+      </div>
+      <p class="flex-shrink-0 value">R$ <span><%= number_to_currency(@card_amount, unit: "", separator: ",", delimiter: "." ).split(",").first %></span>,<%= number_to_currency(@card_amount, unit: "R$", separator: "," ).split(',').last %></p>
+    </div>
+    <div class="lancamentos-tag d-flex justify-content-center">
+      <p class="flex-shrink-0">Lançamentos da TAG</p>
+      <div class="dots">
+        <p>...........................................................................................................................................................................................................................................................................................................................................................................................................................................................</p>
+      </div>
+      <p class="flex-shrink-0 value">R$ <span><%= number_to_currency(@tag_total, unit: "", separator: ",", delimiter: "." ).split(",").first %></span>,<%= number_to_currency(@tag_total, unit: "R$", separator: "," ).split(',').last %></p>
+    </div>
+    <div class="descontos d-flex justify-content-center">
+      <p class="flex-shrink-0">Descontos</p>
+      <div class="dots">
+        <p>...........................................................................................................................................................................................................................................................................................................................................................................................................................................................</p>
+      </div>
+      <p class="flex-shrink-0 value">-R$ <span><%= number_to_currency(@discounts, unit: "", separator: ",", delimiter: "." ).split(",").first %></span>,<%= number_to_currency(@discounts, unit: "R$", separator: "," ).split(',').last %></p>
+    </div>
+    <div class="total-fatura d-flex justify-content-between border-top">
+      <p class="flex-shrink-0">Total Fatura</p>
+      <div class="dots">
+        <p>...........................................................................................................................................................................................................................................................................................................................................................................................................................................................</p>
+      </div>
+      <p class="flex-shrink-0 value">R$ <span><%= number_to_currency(@card_total, unit: "", separator: ",", delimiter: "." ).split(",").first %></span>,<%= number_to_currency(@card_total, unit: "R$", separator: "," ).split(',').last %></p>
     </div>
   </div>
 </div>
