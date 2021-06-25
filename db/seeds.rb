@@ -43,23 +43,30 @@ p '-----------------------------------------------------------------------------
 p 'Creating 4 new Locations...'
 
 location1 = Location.new
-location1.name = 'MultiPark Moema'
+location1.name = 'MultiPark ARQ Moema'
 location1.category = 'Estacionamento'
+location1.address = 'Av. Rouxinol, 55, São Paulo'
 location1.save
 
 location2 = Location.new
 location2.name = 'Posto Shell Center'
 location2.category = 'Posto'
+location2.address = 'R. dos Macunis, 644, São Paulo'
 location2.save
 
 location3 = Location.new
 location3.name = 'Drive Carrefour Pinheiros'
 location3.category = 'Mercado'
+location3.address = 'Av. Rebouças, 3970, São Paulo'
 location3.save
 
 location4 = Location.new
 location4.name = 'Pedágio Bandeirantes'
 location4.category = 'Pedágio'
+location4.address = 'SP-348, Caieiras - SP'
+location4.save
+location4.latitude = -46.813007
+location4.longitude = -23.347132
 location4.save
 
 p '------------------------------------------------------------------------------------'
