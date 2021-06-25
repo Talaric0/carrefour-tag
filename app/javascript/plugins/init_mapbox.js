@@ -18,12 +18,30 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-      new mapboxgl.Marker()
+      const m = new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);
     });
+    
     fitMapToMarkers(map, markers);
+
+    if (document.querySelectorAll('.map-link')){
+      const mapLinks = document.querySelectorAll('.map-link');
+      mapLinks.forEach((mapLink) => {
+        
+        mapLink.addEventListener('click', (event) => {
+          event.preventDefault();
+          map._markers.forEach((mapMarker) => {
+            mapMarker._popup.remove();
+            if (mapMarker._lngLat.lng === parseFloat(mapLink.getAttribute('lng')) && mapMarker._lngLat.lat === parseFloat(mapLink.getAttribute('lat'))){
+              mapMarker.togglePopup();  
+            }
+          })
+          document.getElementById('map').scrollIntoView({behavior: 'smooth'});
+        })
+      })
+    }
   }
 };
 

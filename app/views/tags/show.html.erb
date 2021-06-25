@@ -26,7 +26,7 @@
         <div class='d-flex align-items-center justify-content-start'>
           <%= image_tag "order_icons/four-icon.png" %>
           <div>
-            <p class='text'><%= order.location.name %></p>
+            <a class='text map-link' lat="<%= order.location.latitude %>" lng="<%= order.location.longitude %>"><%= order.location.name %></a>
             <p class='category'><%= order.location.category %></p>
           </div>
         </div>
