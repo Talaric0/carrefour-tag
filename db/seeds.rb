@@ -93,8 +93,8 @@ location4.name = 'Pedágio Bandeirantes'
 location4.category = 'Pedágio'
 location4.address = 'SP-348, Caieiras - SP'
 location4.save
-location4.latitude = -46.813007
-location4.longitude = -23.347132
+location4.latitude = -23.347132
+location4.longitude = -46.813007
 location4.save
 
 p '------------------------------------------------------------------------------------'
