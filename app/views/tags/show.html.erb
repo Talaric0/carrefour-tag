@@ -1,11 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div id="map"
+     style="width: 100%; height: 40vh;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
-<% @locations.each do |location| %>
-  <p><%= location.name %>
-  <%= location.address %></p>
-<% end %>
+<div class='card-padding my-4'>
+  <h2 class='card-title text-center'><%= @tag.nickname %></h2>
+  <div class='my-3 text-center'>
+  <%# Insert buttons here %>
+    <p>[Tag Related Buttons]</p>
+  </div>
+  <h2 class='card-title'>Lançamentos da TAG</h2>
+  <hr>
+  <% @orders_hash.each do |date, orders| %>
+    <p class='card-order-date'><%= date %></p>
+    <% orders.each do |order| %>
+      <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+        <div class='d-flex align-items-center justify-content-start'>
+          <%= image_tag "order_icons/four-icon.png" %>
+          <div>
+            <p class='text'><%= order.location.name %></p>
+            <p class='category'><%= order.location.category %></p>
+          </div>
+        </div>
+        <p class='value'>R$ <span><%= order.value.to_s.split('.').first %></span>,<%= number_to_currency(order.value, unit: "R$", separator: "," ).split(',').last %></p>
+      </div>  
+    <% end %>
+  <% end %>
+</div>
 
 
-
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
