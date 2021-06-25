@@ -24,7 +24,7 @@
     <% orders.each do |order| %>
       <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
         <div class='d-flex align-items-center justify-content-start'>
-          <%= image_tag "order_icons/four-icon.png" %>
+          <%= image_tag "order_icons/#{order.location.icon}.png" %>
           <div>
             <a class='text map-link' lat="<%= order.location.latitude %>" lng="<%= order.location.longitude %>"><%= order.location.name %></a>
             <p class='category'><%= order.location.category %></p>
