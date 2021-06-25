@@ -32,13 +32,13 @@ const initMapbox = () => {
         
         mapLink.addEventListener('click', (event) => {
           event.preventDefault();
-          let markerToPop
           map._markers.forEach((mapMarker) => {
             mapMarker._popup.remove();
             if (mapMarker._lngLat.lng === parseFloat(mapLink.getAttribute('lng')) && mapMarker._lngLat.lat === parseFloat(mapLink.getAttribute('lat'))){
-              mapMarker.togglePopup();;  
+              mapMarker.togglePopup();  
             }
           })
+          document.getElementById('map').scrollIntoView({behavior: 'smooth'});
         })
       })
     }
