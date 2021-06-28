@@ -12,13 +12,15 @@ export const temporaryLockAlert = (unlockButton) => {
           ? "Deseja desfazer o bloqueio temporário?"
           : "Selecione o motivo do bloqueio",
         input: isLocked ? "" : "select",
-        inputAttributes: {
-          autocapitalize: "off",
-        },
         showCancelButton: true,
+        inputOptions: {
+            robbery: 'O veículo foi roubado',
+            tow: 'O veículo precisa ser guinchado',
+            other: 'Outro'
+        },
         inputPlaceholder: isLocked
           ? "Digite seu código"
-          : "Motivo do bloqueio...",
+          : "Selecione uma opção",
         inputValidator: (value) => {
           if (!value) {
             return "Digite o motivo do bloqueio";
