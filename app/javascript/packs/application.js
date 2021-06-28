@@ -34,6 +34,7 @@ import { previewImageOnFileSelect } from "../functions/photo_preview";
 import { initSweetalert } from "../plugins/init_sweetalert";
 import { initAutocomplete } from "../plugins/init_autocomplete";
 import { unlockButtonAlert } from "../functions/unlock_button";
+import { temporaryLockAlert } from "../functions/temporary_lock";
 import { cancelButtonAlert } from "../functions/cancel_button";
 
 document.addEventListener("turbolinks:load", () => {
@@ -43,8 +44,13 @@ document.addEventListener("turbolinks:load", () => {
   // Sweet alert stuff
   // lock/unlock btns
   const unlockButton = document.querySelector("#sweet-alert-unlock-tag")
+  const temporaryLockButton = document.querySelector("#sweet-alert-temporary-lock-tag")
   if (unlockButton) {
     unlockButtonAlert(unlockButton);
+  }
+
+  if (temporaryLockButton) {
+    temporaryLockAlert(temporaryLockButton)
   }
 
   // cancel tag buttons
