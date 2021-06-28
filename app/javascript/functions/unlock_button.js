@@ -11,7 +11,14 @@ export const unlockButtonAlert = (unlockButton) => {
         html: isLocked
           ? "<div><p>Insira o código da sua TAG...</p><img class='mt-3' src='/assets/images/carrefour-tag.png' height='auto', width='90%'></div>"
           : "Insira o motivo do bloqueio",
-        input: "text",
+        input: isLocked ? "text" : "select",
+        inputOptions: {
+          'Fruits': {
+            apples: 'Apples',
+            bananas: 'Bananas',
+            grapes: 'Grapes',
+            oranges: 'Oranges'
+          },
         inputAttributes: {
           autocapitalize: "on",
         },
