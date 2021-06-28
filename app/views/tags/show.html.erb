@@ -25,7 +25,7 @@
           <div class="card-body">
             <div class="btns-wrapper">
               <%# Block button stuff down here %>
-              <button id=<%="sweet-alert-unlock-tag"%> class="btn btn-outline-secondary carrefour-button"><%= @tag.locked ? 'Desbloquear' : 'Bloqueio temporário'%></button>
+              <button id=<%="sweet-alert-unlock-tag"%> class="btn btn-outline-secondary carrefour-button" data-unlock=<%= @tag.unlock_code %> ><%= @tag.locked ? 'Desbloquear' : 'Bloqueio temporário'%></button>
               <%= link_to "", unlock_tag_path(@tag), id: "unlock-link", class: "hidden" %>
               <%# cancel button stuff %>
               <button class="btn btn-outline-secondary carrefour-button" id=<%="sweet-alert-cancel-tag"%>>Cancelar TAG</button>
