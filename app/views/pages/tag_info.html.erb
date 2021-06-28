@@ -1,7 +1,7 @@
 <h2 style="margin: 1rem;"> Olá, <%= current_user.first_name %> </h2>
 
 
-<div class="tag_info_banner" style="background-image: url(<%= image_path 'carro_popular.png' %>)">
+<div class="tag_info_banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= image_path 'carro_popular.png' %>)">
   <h1>Carrefour Tag</h1>
   <p>Solicite seu adesivo e aproveite as vantagens que o Carrefour TAG oferece!</p>
   <%= link_to "Peça agora!", new_tag_path, class: "new-tag-button" %>
