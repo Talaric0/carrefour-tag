@@ -1,9 +1,8 @@
 import { initSweetalert } from "../plugins/init_sweetalert";
 
-export const unlockButtonAlert = (unlockButtons) => {
-  unlockButtons.forEach((button) => {
+export const unlockButtonAlert = (unlockButton) => {
     // Check if tag is locked or unlocked
-    const isLocked = button.innerText == "Desbloquear";
+    const isLocked = unlockButton.innerText == "Desbloquear";
 
     initSweetalert(
       "#sweet-alert-unlock-tag",
@@ -35,10 +34,9 @@ export const unlockButtonAlert = (unlockButtons) => {
       (value) => {
         console.log(value);
         if (value.isConfirmed) {
-          const link = button.nextElementSibling;
+          const link = unlockButton.nextElementSibling;
           link.click();
         }
       }
     );
-  });
 };

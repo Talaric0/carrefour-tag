@@ -1,7 +1,6 @@
 import { initSweetalert } from "../plugins/init_sweetalert";
 
-export const cancelButtonAlert = (cancelButtons) => {
-  cancelButtons.forEach((button) => {
+export const cancelButtonAlert = (cancelButton) => {
     initSweetalert(
       "#sweet-alert-cancel-tag",
       {
@@ -14,10 +13,9 @@ export const cancelButtonAlert = (cancelButtons) => {
       (value) => {
         console.log(value);
         if (value.isConfirmed) {
-          const link = button.nextElementSibling;
+          const link = cancelButton.nextElementSibling;
           link.click();
         }
       }
     );
-  });
 };

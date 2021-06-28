@@ -8,14 +8,34 @@
   <h2 class='card-title text-center'><%= @tag.nickname %></h2>
   <div class='my-3 text-center'>
   <%# Insert buttons here %>
-    <div class="btns-wrapper">
-      <%# cancel button stuff %>
-      <button class="btn btn-outline-secondary carrefour-button" id=<%="sweet-alert-cancel-tag"%>>Cancelar</button>
-      <%= link_to "", cancel_tag_path(@tag), id: "cancel-link", class: "hidden" %>
-      <%# Block button stuff down here %>
-      <button id=<%="sweet-alert-unlock-tag"%> class="btn btn-outline-secondary carrefour-button"><%= @tag.locked ? 'Desbloquear' : 'Bloquear'%></button>
-      <%= link_to "", unlock_tag_path(@tag), id: "unlock-link", class: "hidden" %>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link d-flex w-100 justify-content-between collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Configurações
+              <div class="arrow bounce">
+                <i class="fa fa-arrow-down"></i>
+              </div>
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <div class="btns-wrapper">
+              <%# Block button stuff down here %>
+              <button id=<%="sweet-alert-unlock-tag"%> class="btn btn-outline-secondary carrefour-button"><%= @tag.locked ? 'Desbloquear' : 'Bloqueio temporário'%></button>
+              <%= link_to "", unlock_tag_path(@tag), id: "unlock-link", class: "hidden" %>
+              <%# cancel button stuff %>
+              <button class="btn btn-outline-secondary carrefour-button" id=<%="sweet-alert-cancel-tag"%>>Cancelar TAG</button>
+              <%= link_to "", cancel_tag_path(@tag), id: "cancel-link", class: "hidden" %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    
   </div>
   <h2 class='card-title'>Lançamentos da TAG</h2>
   <hr>
