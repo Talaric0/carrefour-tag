@@ -10,8 +10,8 @@ export const temporaryLockAlert = (unlockButton) => {
         title: isLocked ? "<div class='mt-3'><p>Debloquear TAG</p></div>" : "Bloquear TAG",
         html: isLocked
           ? "Deseja desfazer o bloqueio temporário?"
-          : "Insira o motivo do bloqueio",
-        input: isLocked ? "" : "text",
+          : "Selecione o motivo do bloqueio",
+        input: isLocked ? "" : "select",
         inputAttributes: {
           autocapitalize: "off",
         },
