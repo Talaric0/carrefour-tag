@@ -42,19 +42,15 @@ document.addEventListener("turbolinks:load", () => {
 
   // Sweet alert stuff
   // lock/unlock btns
-  const unlockButtons = document.querySelectorAll(
-    ".btns-wrapper > button:nth-of-type(2)"
-  );
-  if (unlockButtons) {
-    unlockButtonAlert(unlockButtons);
+  const unlockButton = document.querySelector("#sweet-alert-unlock-tag")
+  if (unlockButton) {
+    unlockButtonAlert(unlockButton);
   }
 
   // cancel tag buttons
-  const cancelButtons = document.querySelectorAll(
-    ".btns-wrapper > button:nth-child(1)"
-  );
-  if (cancelButtons) {
-    cancelButtonAlert(cancelButtons);
+  const cancelButton = document.querySelector("#sweet-alert-cancel-tag")
+  if (cancelButton) {
+    cancelButtonAlert(cancelButton);
   }
 
   previewImageOnFileSelect();
