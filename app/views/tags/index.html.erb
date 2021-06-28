@@ -11,7 +11,10 @@
     <% if !tag.canceled %>
       <%= link_to(tag) do %>
         <div class="tag_card">
-          <p><%= tag.nickname %></p>
+          <div class="tag-title d-flex justify-content-between">
+            <p><%= tag.nickname %></p>
+            <i class="fas fa-chevron-right"></i>
+          </div>
           <div class="tag_card_wrapper">
             <div class="car_info">
               <div class="info"><strong>Marca:</strong><span><%= tag.maker.split("-")[1] %></span></div>
