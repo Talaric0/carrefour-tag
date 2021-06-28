@@ -1,7 +1,7 @@
 require 'open-uri'
 
 class TagsController < ApplicationController
-  before_action :set_tag, only: %i[ show edit update destroy unlock cancel]
+  before_action :set_tag, only: %i[ show edit update destroy unlock cancel temporary_lock]
 
   # GET /tags or /tags.json
   def index
@@ -91,8 +91,12 @@ class TagsController < ApplicationController
   end
 
   def unlock
-    @tag.toggle!(:locked)
-    redirect_to @tag
+    @tag.update(unlock_code: "xyz")
+    toggle_locked
+  end
+
+  def temporary_lock
+    toggle_locked
   end
 
   def cancel
@@ -106,8 +110,14 @@ class TagsController < ApplicationController
       @tag = Tag.find(params[:id])
     end
 
+    def toggle_locked
+      @tag.toggle!(:locked)
+      redirect_to @tag
+    end
+    
+
     # Only allow a list of trusted parameters through.
     def tag_params
-      params.require(:tag).permit(:nickname, :plate, :maker, :model, :year, :locked, :user_id, :photo)
+      params.require(:tag).permit(:nickname, :plate, :maker, :model, :year, :locked, :user_id, :photo, :unlock_code)
     end
 end

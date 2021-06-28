@@ -24,9 +24,15 @@
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
             <div class="btns-wrapper">
-              <%# Block button stuff down here %>
-              <button id=<%="sweet-alert-unlock-tag"%> class="btn btn-outline-secondary carrefour-button" data-unlock=<%= @tag.unlock_code %> ><%= @tag.locked ? 'Desbloquear' : 'Bloqueio temporário'%></button>
-              <%= link_to "", unlock_tag_path(@tag), id: "unlock-link", class: "hidden" %>
+              <% if (@tag.locked && @tag.unlock_code == "") %>
+                <%# unlock button stuff %>
+                <button id=<%="sweet-alert-unlock-tag"%> class="btn btn-outline-secondary carrefour-button" data-unlock=<%= @tag.unlock_code %> >Desbloquear</button>
+                <%= link_to "", unlock_tag_path(@tag), id: "unlock-link", class: "hidden" %>
+              <% elsif (@tag.unlock_code != "") %>
+                <%# TEMPORARY LOCK %>
+                <button id=<%="sweet-alert-temporary-lock-tag"%> class="btn btn-outline-secondary carrefour-button" data-unlock=<%= @tag.unlock_code %> ><%= @tag.locked ? 'Desbloquear' : 'Bloqueio temporário'%></button>
+                <%= link_to "", temporary_lock_tag_path(@tag), id: "temporary-lock-link", class: "hidden" %>
+              <% end %>
               <%# cancel button stuff %>
               <button class="btn btn-outline-secondary carrefour-button" id=<%="sweet-alert-cancel-tag"%>>Cancelar TAG</button>
               <%= link_to "", cancel_tag_path(@tag), id: "cancel-link", class: "hidden" %>

@@ -2,34 +2,25 @@ import { initSweetalert } from "../plugins/init_sweetalert";
 
 export const unlockButtonAlert = (unlockButton) => {
     // Check if tag is locked or unlocked
-    const isLocked = unlockButton.innerText == "Desbloquear";
 
     initSweetalert(
       "#sweet-alert-unlock-tag",
       {
-        title: isLocked ? "<div class='mt-3'><p>Debloquear TAG</p></div>" : "Bloquear TAG",
-        html: isLocked
-          ? "<div><p>Insira o código da sua TAG...</p><img class='mt-3' src='/assets/images/carrefour-tag.png' height='auto', width='90%'></div>"
-          : "Insira o motivo do bloqueio",
+        title: "<div class='mt-3'><p>Debloquear TAG</p></div>",
+        html: "<div><p>Insira o código da sua TAG...</p><img class='mt-3' src='/assets/images/carrefour-tag.png' height='auto', width='90%'></div>",
         input: "text",
         inputAttributes: {
           autocapitalize: "on",
         },
         showCancelButton: true,
-        inputPlaceholder: isLocked
-          ? "Digite seu código"
-          : "Motivo do bloqueio...",
+        inputPlaceholder: "Digite seu código",
         inputValidator: (value) => {
           if (!value) {
-            return isLocked
-              ? "Digite o código da sua TAG"
-              : "Digite o motivo do bloqueio";
+            return "Digite o código da sua TAG";
           }
         },
-        icon: isLocked ? "" : "question",
-        confirmButtonText: isLocked
-          ? 'Desbloquear <i class="fas fa-lock-open"></i>'
-          : 'Bloquear <i class="fas fa-lock"></i>',
+        icon: "question",
+        confirmButtonText: 'Desbloquear <i class="fas fa-lock-open"></i>',
       },
       (value) => {
         console.log(value);
