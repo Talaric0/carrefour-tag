@@ -8,9 +8,9 @@ export const unlockButtonAlert = (unlockButtons) => {
     initSweetalert(
       "#sweet-alert-unlock-tag",
       {
-        title: isLocked ? "Debloquear TAG" : "Bloquear TAG",
-        text: isLocked
-          ? "Insira o código enviado por email..."
+        title: isLocked ? "<div class='mt-3'><p>Debloquear TAG</p></div>" : "Bloquear TAG",
+        html: isLocked
+          ? "<div><p>Insira o código da sua TAG...</p><img class='mt-3' src='/assets/images/carrefour-tag.png' height='auto', width='90%'></div>"
           : "Insira o motivo do bloqueio",
         input: "text",
         inputAttributes: {
@@ -23,11 +23,11 @@ export const unlockButtonAlert = (unlockButtons) => {
         inputValidator: (value) => {
           if (!value) {
             return isLocked
-              ? "Digite o código enviado para seu email"
+              ? "Digite o código da sua TAG"
               : "Digite o motivo do bloqueio";
           }
         },
-        icon: "question",
+        icon: isLocked ? "" : "question",
         confirmButtonText: isLocked
           ? 'Desbloquear <i class="fas fa-lock-open"></i>'
           : 'Bloquear <i class="fas fa-lock"></i>',
