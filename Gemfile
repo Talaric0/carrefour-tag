@@ -5,6 +5,8 @@ ruby '2.6.6'
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'geocoder'
+# aws stuff
+gem 'aws-sdk'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.6'
