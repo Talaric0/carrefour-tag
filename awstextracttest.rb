@@ -1,6 +1,10 @@
 require 'aws-sdk'
 require 'open-uri'
 
+Aws.config.update({
+  credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
+})
+
 client = Aws::Textract::Client.new(region: 'eu-west-2')
 
 RESP = client.analyze_document({ document: { bytes: URI.open('CRLV3.png').read }, feature_types: ["FORMS"] })
