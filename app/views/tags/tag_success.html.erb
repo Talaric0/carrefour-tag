@@ -1,9 +1,11 @@
 <div class='tag-success'>
   <% if @tags.length < 2 %>
-    <h2>PARABÉNS!</h2>
+    <h2 class='mb-4'>PARABÉNS!</h2>
   <% else %>
-    <h2>NOVO VEÍCULO CADASTRADO</h2>
+    <h2 class='mb-4'>NOVO VEÍCULO CADASTRADO</h2>
   <% end %>
-  <p>Estamos verificando tudo, mas, não se preocupe, sua TAG será enviada para o seu endereço.</p>
+  <p>Estamos verificando tudo, mas, não se preocupe, sua TAG será enviada para o seu endereço cadastrado:</p>
+  <p class='mb-2'><strong><%= current_user.address %></strong></p>
   <%= link_to 'Finalizar', tags_path, class: 'carrefour-button' %>
+  <p class='mb-4 warning'>*caso o endereço não esteja correto, entre em contato com a nossa central de atendimento pelo 0800 718 2222</p>
 </div>
