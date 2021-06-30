@@ -1,15 +1,30 @@
 <div class="edit-tag-message">
-  <h1>Quais dados você gostaria de mudar?</h1>
+  <h2>Confira se os dados estão corretos.</h2>
 </div>
 
 
 <div class="form-container">
   <%= simple_form_for(@tag) do |f| %>
     <%= f.input :maker, collection: @makers_models_array, label: "Marca", label_html: { class: "new-tag-label" } %>
+    <% if false %>
     <%= f.input :model, label: "Modelo", label_html: { class: "new-tag-label" }, input_html: { class: "select2"} %>
+    <% end %>
     <%= f.input :plate, label: "Placa", label_html: { class: "new-tag-label" } %>
     <%= f.input :year, label: "Ano", label_html: { class: "new-tag-label" } %>
     <%= f.input :nickname, label: "Apelido do veículo", label_html: { class: "new-tag-label" } %>
     <%= f.submit "Confirmar", class: "carrefour-button" %>
   <% end %>
 </div>
+
+<script>
+  const cleavePlate = new Cleave('#tag_plate', {
+    delimiter: '-',
+    blocks: [3, 4],
+    uppercase: true
+  });
+  const cleaveYear = new Cleave('#tag_year', {
+    blocks: [4],
+    numericOnly: true,
+    uppercase: true
+  });
+</script>
