@@ -5,61 +5,51 @@
 </div>
 
 <div class='card-padding my-4'>
-  <h2 class='card-title text-center'><%= @tag.nickname %></h2>
-  <div class='my-3 text-center'>
-  <%# Insert buttons here %>
-    <div id="accordion">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link d-flex w-100 justify-content-between collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              Configurações
-              <div class="arrow bounce">
-                <i class="fa fa-arrow-down"></i>
-              </div>
-            </button>
-          </h5>
-        </div>
-
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body">
-            <div class="btns-wrapper">
-              <% if (@tag.locked && @tag.unlock_code == "") %>
-                <%# unlock button stuff %>
-                <button id=<%="sweet-alert-unlock-tag"%> class="btn btn-outline-secondary carrefour-button" data-unlock=<%= @tag.unlock_code %> >Desbloquear</button>
-                <%= link_to "", unlock_tag_path(@tag), id: "unlock-link", class: "hidden" %>
-              <% elsif (@tag.unlock_code != "") %>
-                <%# TEMPORARY LOCK %>
-                <button id=<%="sweet-alert-temporary-lock-tag"%> class="btn btn-outline-secondary carrefour-button" data-unlock=<%= @tag.unlock_code %> ><%= @tag.locked ? 'Desbloquear' : 'Bloqueio temporário'%></button>
-                <%= link_to "", temporary_lock_tag_path(@tag), id: "temporary-lock-link", class: "hidden" %>
-              <% end %>
-              <%# cancel button stuff %>
-              <button class="btn btn-outline-secondary carrefour-button" id=<%="sweet-alert-cancel-tag"%>>Cancelar TAG</button>
-              <%= link_to "", cancel_tag_path(@tag), id: "cancel-link", class: "hidden" %>
+  <h2 class='card-title text-center my-4'><%= @tag.nickname %></h2>
+  
+  <h2 class='card-title'>Lançamentos</h2>
+  <hr>
+  
+  <% if @orders_hash.count > 0 %>
+    <% @orders_hash.each do |date, orders| %>
+      <p class='card-order-date'><%= date %></p>
+      <% orders.each do |order| %>
+        <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
+          <div class='d-flex align-items-center justify-content-start'>
+            <%= image_tag "order_icons/#{order.location.icon}.png" %>
+            <div>
+              <a class='text map-link' lat="<%= order.location.latitude %>" lng="<%= order.location.longitude %>"><%= order.location.name %></a>
+              <p class='category'><%= order.location.category %></p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-  <h2 class='card-title'>Lançamentos da TAG</h2>
-  <hr>
-  <% @orders_hash.each do |date, orders| %>
-    <p class='card-order-date'><%= date %></p>
-    <% orders.each do |order| %>
-      <div class='d-flex align-items-center justify-content-between card-detailed-transaction'>
-        <div class='d-flex align-items-center justify-content-start'>
-          <%= image_tag "order_icons/#{order.location.icon}.png" %>
-          <div>
-            <a class='text map-link' lat="<%= order.location.latitude %>" lng="<%= order.location.longitude %>"><%= order.location.name %></a>
-            <p class='category'><%= order.location.category %></p>
-          </div>
-        </div>
-        <p class='value'>R$ <span><%= order.value.to_s.split('.').first %></span>,<%= number_to_currency(order.value, unit: "R$", separator: "," ).split(',').last %></p>
-      </div>  
+          <p class='value'>R$ <span><%= order.value.to_s.split('.').first %></span>,<%= number_to_currency(order.value, unit: "R$", separator: "," ).split(',').last %></p>
+        </div>  
+      <% end %>
     <% end %>
+  <% else %>
+  <div class='card-detailed-transaction mb-4'>
+    <p class='text'>Nenhum lançamento identificado...</p>
+  </div>
   <% end %>
+  
+
+  <h2 class='card-title'>Opções</h2>
+  <div class='my-3'>
+  <hr>
+  <%# Insert buttons here %>
+    <% if (@tag.locked && @tag.unlock_code == "") %>
+      <%# unlock button stuff %>
+      <button id=<%="sweet-alert-unlock-tag"%> class="btn btn-outline-secondary carrefour-button" data-unlock=<%= @tag.unlock_code %> >Desbloquear</button>
+      <%= link_to "", unlock_tag_path(@tag), id: "unlock-link", class: "hidden" %>
+    <% elsif (@tag.unlock_code != "") %>
+      <%# TEMPORARY LOCK %>
+      <button id=<%="sweet-alert-temporary-lock-tag"%> class="btn btn-outline-secondary carrefour-button" data-unlock=<%= @tag.unlock_code %> ><%= @tag.locked ? 'Desbloquear' : 'Bloqueio temporário'%></button>
+      <%= link_to "", temporary_lock_tag_path(@tag), id: "temporary-lock-link", class: "hidden" %>
+    <% end %>
+    <%# cancel button stuff %>
+    <button class="btn btn-outline-secondary carrefour-button-red" id=<%="sweet-alert-cancel-tag"%>>Cancelar</button>
+    <%= link_to "", cancel_tag_path(@tag), id: "cancel-link", class: "hidden" %>
+  </div>
 </div>
 
 
