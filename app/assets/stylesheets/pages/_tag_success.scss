@@ -22,3 +22,11 @@
 .tag-success a {
   width: 50%;
 }
+
+.tag-success .warning {
+  font-size: small;
+  opacity: 0.7;
+  position: absolute;
+  bottom: 50px;
+  padding: 0 20px;
+}
