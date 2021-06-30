@@ -48,6 +48,18 @@
   margin-bottom: 0.2rem;
 }
 
+.carrefour-button-red {
+  background-color: transparent;
+  color: $red;
+  border: 1px solid $red;
+  font-family: $primary-font;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
 .new-tag-button {
   font-family: $button-font;
   background-color: #1f5bc5;

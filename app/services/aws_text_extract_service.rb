@@ -4,7 +4,7 @@ require 'open-uri'
 class AwsTextExtractService
   def initialize
     client = Aws::Textract::Client.new(region: 'eu-west-2')
-
+    
     @resp = client.analyze_document({ document: { bytes: URI.open('CRLV3.png').read }, feature_types: ["FORMS"] })
 
     kv_hash = get_kv_hash
