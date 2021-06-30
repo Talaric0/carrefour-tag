@@ -123,7 +123,7 @@ User.all.each do |user|
       user: user,
       nickname: "Carro do #{Faker::Name.unique.male_first_name}",
       plate: "#{('A'..'Z').to_a.shuffle[0,3].join}-#{Faker::Number.number(digits: 4)}",
-      maker: "#{maker['id']}-#{maker['fipe_name']}",
+      maker: "#{maker['fipe_name']}/#{model['name'].split(" ")[0]}",
       model: model['name'].split(" ")[0],
       year: rand(2008..Date.today.year),
     )
