@@ -10,11 +10,13 @@
 
 <div class="form-container">
   <%= simple_form_for(@tag) do |f| %>
-    <%= f.input :maker, collection: @makers_models_array, label: "Marca", label_html: { class: "new-tag-label" } %>
-    <%= f.input :model, collection: [], label: "Modelo", label_html: { class: "new-tag-label" }, input_html: { class: "select2"} %>
-    <%= f.input :plate, label: "Placa", label_html: { class: "new-tag-label" } %>
-    <%= f.input :year, label: "Ano", label_html: { class: "new-tag-label" } %>
-    <%= f.input :nickname, label: "Apelido do veículo", label_html: { class: "new-tag-label" } %>
+    <% if false %>
+      <%= f.input :maker, collection: @makers_models_array, label: "Marca", label_html: { class: "new-tag-label" } %>
+      <%= f.input :model, collection: [], label: "Modelo", label_html: { class: "new-tag-label" }, input_html: { class: "select2"} %>
+      <%= f.input :plate, label: "Placa", label_html: { class: "new-tag-label" } %>
+      <%= f.input :year, label: "Ano", label_html: { class: "new-tag-label" } %>
+    <% end %>
+    <%= f.input :nickname, label: "Apelido do veículo", label_html: { class: "new-tag-label" } %> 
     <%= f.input :photo, input_html: { type: "file", accept: "image/*", capture: "environment", class: "d-none add-picture", id: "photo-input" }, label: "📷 Tire uma foto do documento do seu veículo", label_html: { class: 'add-picture'} %>
     <button type="button" data-toggle="modal" data-target="#exampleModal" class="carrefour-button">Prosseguir</button>
 
@@ -41,7 +43,7 @@
   <% end %>
 </div>
 
-<script>
+<%# <script>
   const cleavePlate = new Cleave('#tag_plate', {
     delimiter: '-',
     blocks: [3, 4],
@@ -52,5 +54,5 @@
     numericOnly: true,
     uppercase: true
   });
-</script>
+</script> %>
 
