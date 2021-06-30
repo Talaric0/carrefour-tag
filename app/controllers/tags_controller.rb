@@ -55,7 +55,16 @@ class TagsController < ApplicationController
 
     respond_to do |format|
       if @tag.save
-        format.html { redirect_to tag_success_path, notice: "Tag was successfully created." }
+        image_path = view_context.cl_image_path(@tag.photo.key)
+        tag_hash = AwsTextExtractService.new.scan(image_path)
+
+        @tag.update(
+          plate: tag_hash["PLACA"],
+          maker: tag_hash["MARCAMODELO/VERSÃO"],
+          year: tag_hash["ANOMODELO"]
+        )
+
+        format.html { redirect_to edit_tag_path(@tag), notice: "Tag was successfully created." }
         format.json { render :show, status: :created, location: @tag }
       else
         format.html { render :new, status: :unprocessable_entity }

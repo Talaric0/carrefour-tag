@@ -2,16 +2,17 @@ require 'aws-sdk'
 require 'open-uri'
 
 class AwsTextExtractService
-  def initialize
+  def scan(image_path)
     client = Aws::Textract::Client.new(region: 'eu-west-2')
-    
-    @resp = client.analyze_document({ document: { bytes: URI.open('CRLV3.png').read }, feature_types: ["FORMS"] })
+
+    @resp = client.analyze_document({ document: { bytes: URI.open(image_path).read }, feature_types: ["FORMS"] })
 
     kv_hash = get_kv_hash
 
     kvs = get_kv_relationship(kv_hash[0], kv_hash[1], kv_hash[2])
-
-    print_kvs(kvs)
+    # puts kvs
+    # print_kvs(kvs)
+    return kvs
   end
 
   def get_kv_hash
@@ -63,7 +64,7 @@ class AwsTextExtractService
 
         relationship['ids'].each do |child_id|
           word = blocks_hash[child_id]
-          text += "#{word['text']} " if word['block_type'] == 'WORD'
+          text += "#{word['text']}" if word['block_type'] == 'WORD'
           next unless word['block_type'] == 'SELECTION_ELEMENT'
 
           text += 'X ' if word['selection_status'] == 'SELECTED'
@@ -75,7 +76,7 @@ class AwsTextExtractService
 
   def print_kvs(kvs)
     kvs.to_a.each do |key, value|
-      "#{key}: #{value}"
+      puts "#{key}: #{value}"
     end
   end
 end
