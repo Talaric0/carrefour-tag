@@ -17,8 +17,8 @@
           </div>
           <div class="tag_card_wrapper">
             <div class="car_info">
-              <div class="info"><strong>Marca:</strong><span><%= tag.maker.gsub("/", " ") %></span></div>
-              <div class="info"><strong>Ano modelo:</strong><span><%= tag.year %></span></div>
+              <div class="info"><strong>Marca:</strong><span><%= tag.maker.split("/").first %></span></div>
+              <div class="info"><strong>Modelo:</strong><span><%= tag.maker.split("/").last.slice!(/([a-zA-Z]+)/) %></span></div>
               <div class="info"><strong>Placa:</strong><span><%= tag.plate %></span></div>
             </div>
           </div>
