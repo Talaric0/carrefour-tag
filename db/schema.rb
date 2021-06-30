@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_06_29_153946) do
     t.integer "year"
     t.boolean "canceled"
     t.string "unlock_code", default: ""
+    t.text "ocr"
     t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
