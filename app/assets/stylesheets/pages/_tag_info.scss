@@ -22,6 +22,7 @@
   margin: 2rem auto 0 auto;
   min-height: 40vh;
   max-height: 45vh;
+  margin-bottom: 65px;
   .header {
     color: #064b9c;
     font-family: Ubuntu;
@@ -29,12 +30,38 @@
     border-bottom: 0.75px solid grey;
   }
   .body {
-    margin: 2rem 0 0 2rem;
+    margin: 1.5rem 0 0 1.5rem;
     ul {
       list-style: none;
       li {
-        margin-bottom: 1rem;
+        margin-bottom: 0;
       }
     }
   }
+}
+
+.feature-item {
+  margin-bottom: 1rem;
+}
+
+.feature-icon {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.item-header {
+  font-family:$primary-font;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.item-body {
+  font-family:$secondary-font;
+  color:$dark-gray;
+}
+
+.ressalvas {
+  font-family: $secondary-font;
+  color:$medium-gray;
+  font-size: 0.7rem;
 }
