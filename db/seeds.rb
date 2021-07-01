@@ -128,7 +128,8 @@ User.all.each do |user|
       maker: "#{maker['fipe_name']}/#{model['name'].split(" ")[0]}",
       model: model['name'].split(" ")[0],
       year: rand(2008..Date.today.year),
-      locked: false
+      locked: false,
+      unlock_code: "xyz"
     )
     puts "Created #{new_tag.nickname} with plate #{new_tag.plate}, a #{new_tag.model} from #{new_tag.maker} year #{new_tag.year}"
     
