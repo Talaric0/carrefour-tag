@@ -18,7 +18,7 @@
     <% end %>
     <%= f.input :nickname, label: "Apelido do veículo", label_html: { class: "new-tag-label" } %> 
     <%= f.input :photo, input_html: { type: "file", accept: "image/*", capture: "environment", class: "d-none add-picture", id: "photo-input" }, label: "📷 Tire uma foto do documento do seu veículo", label_html: { class: 'add-picture'} %>
-    <button type="button" data-toggle="modal" data-target="#exampleModal" class="carrefour-button">Prosseguir</button>
+    <button type="button" data-toggle="modal" data-target="#exampleModal" class="carrefour-button spinner-form-button">Prosseguir</button>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -35,7 +35,11 @@
           </div>
           <div class="modal-footer">
             <%= f.input :photo, input_html: { type: "file", accept: "image/*", capture: "environment", class: "d-none", id: "photo-input" }, label: "Tirar Outra", label_html: { class: 'modal-button'} %>
-            <%= f.submit "Prosseguir", class: "modal-button" %>
+            <%= f.submit "Prosseguir", class: "modal-button spinner-button" %>
+          </div>
+          <div class="spinner" id='spinner'>
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
           </div>
         </div>
       </div>
