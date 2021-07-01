@@ -40,18 +40,6 @@ end
 
 p 'Creating users for André and Bruno'
 
-andre = User.new
-  andre.first_name = "André"
-  andre.last_name = "Carneiro"
-  andre.cpf = "12345678910"
-  andre.address = Faker::Address.full_address
-  andre.email = "#{andre.first_name.downcase.parameterize}.#{andre.last_name.downcase.parameterize}@gmail.com"
-  andre.password = '123456'
-  andre.save!
-  andre.photo.attach(io: open('https://ca.slack-edge.com/T024J94Q9MY-U024UNJK6Q3-a074b806d67a-512'),
-                     filename: "#{andre.first_name.parameterize}_avatar.jpg")
-
-  p "#{andre.first_name} created with email #{andre.email} and password 123456"
 
 bruno = User.new
   bruno.first_name = "Bruno"
@@ -65,6 +53,20 @@ bruno = User.new
                      filename: "#{bruno.first_name.parameterize}_avatar.jpg")
 
   p "#{bruno.first_name} created with email #{bruno.email} and password 123456"
+
+andre = User.new
+  andre.first_name = "André"
+  andre.last_name = "Carneiro"
+  andre.cpf = "12345678910"
+  andre.address = Faker::Address.full_address
+  andre.email = "#{andre.first_name.downcase.parameterize}.#{andre.last_name.downcase.parameterize}@gmail.com"
+  andre.password = '123456'
+  andre.save!
+  andre.photo.attach(io: open('https://ca.slack-edge.com/T024J94Q9MY-U024UNJK6Q3-a074b806d67a-512'),
+                     filename: "#{andre.first_name.parameterize}_avatar.jpg")
+
+  p "#{andre.first_name} created with email #{andre.email} and password 123456"
+
 
 p '------------------------------------------------------------------------------------'
 
@@ -126,6 +128,7 @@ User.all.each do |user|
       maker: "#{maker['fipe_name']}/#{model['name'].split(" ")[0]}",
       model: model['name'].split(" ")[0],
       year: rand(2008..Date.today.year),
+      locked: false
     )
     puts "Created #{new_tag.nickname} with plate #{new_tag.plate}, a #{new_tag.model} from #{new_tag.maker} year #{new_tag.year}"
     
