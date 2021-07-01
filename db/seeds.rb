@@ -147,4 +147,7 @@ User.all.each do |user|
   puts "Created orders for each TAG"
 end
 
+puts "Destroying all André Tags"
+User.find_by(first_name: "André" ).tags.destroy_all
+
 puts "DONE!"
