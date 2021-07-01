@@ -72,12 +72,12 @@ class TagsController < ApplicationController
       end
     end
   end
-  
+
   # PATCH/PUT /tags/1 or /tags/1.json
   def update
     respond_to do |format|
       if @tag.update(tag_params)
-        format.html { redirect_to @tag, notice: "Tag was successfully updated." }
+        format.html { redirect_to tag_success_path, notice: "Tag was successfully updated." }
         format.json { render :show, status: :ok, location: @tag }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -123,7 +123,7 @@ class TagsController < ApplicationController
       @tag.toggle!(:locked)
       redirect_to @tag
     end
-    
+
 
     # Only allow a list of trusted parameters through.
     def tag_params
